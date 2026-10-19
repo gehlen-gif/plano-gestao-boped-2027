@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Plano de Gestão BOPED 2027</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: painel executivo — barra de controles fixa, indicadores, nova estrutura, mapa + detalhe, faturamento por canal, notas */
+:root{
+  --bg:#F3F5F9; --surface:#FFFFFF; --surface-2:#E9EDF4; --line:#D5DCE7;
+  --fg:#152036; --muted:#5A6781; --accent:#1C3F8F; --accent-soft:#E2E9F8;
+  --farma:#0F7C6E; --cir:#1C3F8F; --med:#B4561B; --new:#9A6400; --new-bg:#FBF0D6; --up:#1E7A45; --down:#B3261E;
+  --r-rapha:#6B39A8; --r-aline:#2C8A4A; --r-joao:#1667C2; --r-tiago:#E66A0A; --r-patricia:#E3AC0B; --r-tati:#D23434;
+  --label-on-region:#FFFFFF; --label-on-yellow:#2A2100;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1320; --surface:#151D2D; --surface-2:#1C2639; --line:#2A3650;
+  --fg:#E6EBF4; --muted:#97A3BB; --accent:#8EAEFF; --accent-soft:#1B2A4C;
+  --farma:#3CC2AE; --cir:#8EAEFF; --med:#F0955A; --new:#F2BE55; --new-bg:#3A2E12; --up:#5CCB8A; --down:#FF8A80;
+  --r-rapha:#9A6BDB; --r-aline:#4DB46D; --r-joao:#4A8FE6; --r-tiago:#F38A36; --r-patricia:#F2C53D; --r-tati:#EC5B5B;
+  --label-on-region:#FFFFFF; --label-on-yellow:#2A2100; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1320; --surface:#151D2D; --surface-2:#1C2639; --line:#2A3650;
+  --fg:#E6EBF4; --muted:#97A3BB; --accent:#8EAEFF; --accent-soft:#1B2A4C;
+  --farma:#3CC2AE; --cir:#8EAEFF; --med:#F0955A; --new:#F2BE55; --new-bg:#3A2E12; --up:#5CCB8A; --down:#FF8A80;
+  --r-rapha:#9A6BDB; --r-aline:#4DB46D; --r-joao:#4A8FE6; --r-tiago:#F38A36; --r-patricia:#F2C53D; --r-tati:#EC5B5B;
+  --label-on-region:#FFFFFF; --label-on-yellow:#2A2100; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:.01em}
+h2{font-size:1.75rem;font-weight:700}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:var(--f-display);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;color:var(--accent)}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:18px}
+.sec-head{display:flex;flex-direction:column;gap:4px;max-width:72ch}
+
+/* Cabeçalho */
+header.top{padding-top:28px;display:flex;flex-direction:column;gap:8px}
+header.top h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;line-height:1;text-transform:uppercase}
+header.top h1 span{color:var(--accent)}
+header.top .sub{color:var(--muted);max-width:66ch}
+
+/* Barra de controles */
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:2px solid var(--fg);padding-block:10px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:-24px}
+.ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ctl-label{font-weight:600;font-size:.92rem}
+.ctl-hint{font-size:.8rem;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:3px}
+.seg button{font:600 .9rem var(--f-body);color:var(--muted);background:transparent;border:0;border-radius:999px;padding:5px 16px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--med);color:var(--surface)}
+.seg button:not([aria-pressed="true"]):hover{color:var(--fg)}
+.theme-btn{display:inline-flex;align-items:center;gap:8px;font:600 .9rem var(--f-body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.theme-btn:hover{border-color:var(--accent)}
+.theme-btn svg{width:18px;height:18px}
+button:focus-visible,.region-path:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:2px}
+.kpi .v{font-family:var(--f-display);font-size:2.1rem;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:.85rem;color:var(--muted)}
+.kpi .d{font-size:.85rem;font-weight:600}
+.kpi.farma{border-top:4px solid var(--farma)} .kpi.cir{border-top:4px solid var(--cir)}
+.kpi.medon{outline:2px dashed var(--med);outline-offset:-2px}
+
+/* Nova estrutura */
+.org{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;background:var(--surface);border:2px solid var(--accent);border-radius:10px;padding:20px}
+.node{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--bg)}
+.node b{display:block;font-family:var(--f-display);font-size:1.2rem;font-weight:700}
+.node small{color:var(--muted);font-size:.88rem}
+.node.strong{background:var(--accent-soft);border-color:var(--accent)}
+.badge{display:inline-block;font:700 .72rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:4px;background:var(--accent);color:var(--surface);margin-left:6px;vertical-align:middle}
+.down{text-align:center;color:var(--muted);line-height:1}
+.leaders{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;padding:3px 10px 3px 6px;border-radius:999px;background:var(--surface-2)}
+.dot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block}
+.teams{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.team{border-radius:8px;padding:12px 14px;border:1px solid var(--line);border-left:5px solid var(--c);background:var(--bg)}
+.team b{font-family:var(--f-display);font-size:1.35rem;font-weight:700;display:block}
+.team .ch{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--c)}
+.team small{color:var(--muted);font-size:.88rem}
+.changes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.change{border-top:3px solid var(--accent);background:var(--surface);border-radius:0 0 10px 10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.change h3{font-size:1.12rem}
+.change p{font-size:.92rem;color:var(--muted)}
+
+/* Mapa */
+.map-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:20px;align-items:start}
+.map-box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;min-width:0}
+.map-box svg{display:block;width:100%;height:auto;max-width:100%}
+.region-path{stroke:var(--surface);stroke-width:2.2;stroke-linejoin:round;cursor:pointer;transition:opacity .2s}
+.map-box.has-sel .region-path:not(.on){opacity:.28}
+.st-label{font-family:var(--f-display);font-weight:700;font-size:26px;pointer-events:none;text-anchor:middle;dominant-baseline:central}
+.st-label.sm{font-size:19px}
+.map-hint{font-size:.82rem;color:var(--muted);padding:6px 4px 0}
+.side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.reg-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.reg{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:10px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c)}
+.reg:hover{background:var(--surface-2)}
+.reg:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.reg[aria-pressed="true"]{background:var(--surface-2);border-color:var(--c)}
+.reg .n{font-family:var(--f-display);font-weight:700;font-size:1.1rem}
+.reg .u{font-size:.76rem;color:var(--muted)}
+.reg .big{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.reg .big b{font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.reg .big span{font-size:.75rem;color:var(--muted)}
+.detail{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:14px;border-top:5px solid var(--c)}
+.detail .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.detail .hd h3{font-size:1.6rem}
+.ufs{display:flex;flex-wrap:wrap;gap:4px}
+.uf{font:600 .78rem var(--f-body);padding:2px 7px;border-radius:4px;background:var(--surface-2)}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hs{background:var(--surface-2);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column}
+.hs .v{font-family:var(--f-display);font-size:2.3rem;font-weight:700;line-height:1.05;font-variant-numeric:tabular-nums}
+.hs .l{font-size:.82rem;color:var(--muted)}
+.brk{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:12px}
+.brk-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;font-size:.92rem;align-items:center}
+.brk-row .val{font-variant-numeric:tabular-nums;font-weight:600}
+.brk-row.tot{border-top:1px solid var(--line);padding-top:6px;font-weight:700}
+.mixbar{display:flex;height:10px;border-radius:3px;overflow:hidden;background:var(--surface-2)}
+.alloc{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--line);padding-top:12px}
+.alloc h4{margin:0 0 6px;font:700 .8rem var(--f-body);text-transform:uppercase;letter-spacing:.08em;color:var(--c)}
+.alloc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:.88rem}
+.alloc li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted var(--line);padding-bottom:3px}
+.alloc li span:last-child{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.nv{font:700 .7rem var(--f-body);color:var(--new);background:var(--new-bg);padding:1px 6px;border-radius:999px;margin-left:4px}
+.note{font-size:.85rem;background:var(--accent-soft);border-radius:6px;padding:8px 10px}
+
+/* Gráfico e tabela */
+.chart-box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;overflow-x:auto}
+.chart-box svg{display:block;min-width:620px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--muted);padding:0 4px 10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:22px;height:10px;border-radius:2px;display:inline-block}
+.table-box{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:.86rem}
+th,td{padding:9px 8px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+th{font:600 .74rem var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--surface-2)}
+th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+td:nth-child(2){white-space:normal;min-width:130px;max-width:170px}
+th{white-space:normal}
+th.f{color:var(--farma)} th.c{color:var(--cir)} th.m{color:var(--med)}
+tfoot td{font-weight:700;border-bottom:0;background:var(--surface-2)}
+.notes{font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:16px;max-width:92ch}
+.notes ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+
+@media (max-width:980px){
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .changes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .map-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .changes,.reg-list,.teams,.alloc{grid-template-columns:minmax(0,1fr)}
+  .kpi .v{font-size:1.7rem}
+  .hs .v{font-size:1.8rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Boped · Vendas Externas · Reestruturação das Regionais</div>
+    <h1>Plano de Gestão <span>BOPED</span> 2027</h1>
+    <p class="sub">Liderança multicanal com foco em campo. Os times seguem por canal: Behikes (Farma) e Boinas Azuis (Cirúrgico). Valores de referência: faturamento realizado pela carteira atual em 2026 (Farma de janeiro a setembro; Cirúrgico até a 2ª semana de outubro).</p>
+  </header>
+
+  <div class="controls">
+    <div class="ctl">
+      <span class="ctl-label" id="medLabel">Considerar faturamento Medical</span>
+      <div class="seg" role="group" aria-labelledby="medLabel">
+        <button type="button" id="medNo" aria-pressed="true">Não</button>
+        <button type="button" id="medYes" aria-pressed="false">Sim</button>
+      </div>
+      <span class="ctl-hint">Canal online, atendido por Geraldo (PR) · <span class="num" id="medHint"></span> em 2026</span>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar tema claro ou escuro">
+      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></svg>
+      <span id="themeTxt">Tema escuro</span>
+    </button>
+  </div>
+
+  <section aria-label="Indicadores">
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">O que muda</div>
+      <h2>Nova estrutura: liderança multicanal, times por canal</h2>
+    </div>
+    <div class="org">
+      <div class="node strong"><b>Supervisor Nacional <span class="badge">Multicanal</span></b><small>Farma e Cirúrgico em todo o Brasil</small></div>
+      <div class="down" aria-hidden="true">↓</div>
+      <div class="node"><b>6 Líderes Regionais <span class="badge">Multicanal</span></b><small>Foco em atuação em campo, com visão macro do time e micro de cada canal</small>
+        <div class="leaders" id="leaderChips"></div></div>
+      <div class="down" aria-hidden="true">↓</div>
+      <div class="teams">
+        <div class="team" style="--c:var(--farma)"><span class="ch">Farma</span><b>Behikes</b><small id="teamF"></small></div>
+        <div class="team" style="--c:var(--cir)"><span class="ch">Cirúrgico</span><b>Boinas Azuis</b><small id="teamC"></small></div>
+      </div>
+    </div>
+    <div class="changes">
+      <div class="change"><h3>Liderança multicanal</h3><p>Supervisor e líderes regionais respondem pelos dois canais. A visão conjunta mostra se um canal está compensando o outro e onde estão as tendências de crescimento.</p></div>
+      <div class="change"><h3>Times seguem por canal</h3><p>Os RCAs continuam especialistas: Behikes no Farma e Boinas Azuis no Cirúrgico. Muda a gestão, não a atuação.</p></div>
+      <div class="change"><h3>Tati vira Líder Regional</h3><p>Deixa a supervisão de Trade e assume a regional Sul (RS, SC, PR).</p></div>
+      <div class="change"><h3>Novo trade liderado pelos Regionais</h3><p>Os líderes distribuem a verba todo mês com seus representantes, com uso integral da ferramenta Guelta, já contratada.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Mapa das novas regionais</div>
+      <h2>Seis regiões, seis líderes</h2>
+      <p class="muted">Selecione uma região no mapa ou na lista para ver RCAs por canal e a divisão do faturamento.</p>
+    </div>
+    <div class="map-grid">
+      <div class="map-box" id="mapBox">
+        <svg id="map" viewBox="0 55 920 1125" role="img" aria-label="Mapa do Brasil dividido nas seis regionais"></svg>
+        <div class="map-hint">Toque novamente na região selecionada para voltar à visão Brasil.</div>
+      </div>
+      <div class="side">
+        <div class="reg-list" id="regList"></div>
+        <div class="detail" id="detail"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Faturamento por regional</div>
+      <h2>Farma e Cirúrgico por líder em 2026</h2>
+      <p class="muted">Faturamento realizado pela carteira atual em 2026: Farma de janeiro a setembro; Cirúrgico de janeiro até a 2ª semana de outubro.</p>
+    </div>
+    <div class="chart-box">
+      <div class="legend">
+        <span><i class="sw" style="background:var(--farma)"></i>Farma · Behikes</span>
+        <span><i class="sw" style="background:var(--cir)"></i>Cirúrgico · Boinas Azuis</span>
+        <span id="lgMed" hidden><i class="sw" style="background:repeating-linear-gradient(45deg,var(--med) 0 3px,transparent 3px 6px)"></i>Medical (canal online)</span>
+      </div>
+      <svg id="chart" aria-label="Gráfico de barras do faturamento por regional e canal"></svg>
+    </div>
+    <div class="table-box">
+      <table>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+        <tfoot id="tfoot"></tfoot>
+      </table>
+    </div>
+  </section>
+
+  <div class="notes">
+    <b style="color:var(--fg)">Notas sobre os números</b>
+    <ul>
+      <li>Fonte: quadro revisado por líder (Farma e Cirúrgico). Valores de referência do faturamento realizado em 2026 pela carteira atual: Farma de janeiro a setembro (9 meses) e Cirúrgico de janeiro até a 2ª semana de outubro (9,5 meses). Não são metas.</li>
+      <li>Média mês 2026 = Farma ÷ 9 meses (jan–set) + Cirúrgico ÷ 9,5 meses (janeiro até a 2ª semana de outubro). Com Medical, ela também entra ÷ 9,5.</li>
+      <li>Carteiras que voltam para o interno ficam fora dos totais: AP-MA na regional João (R$ 1.185.000) e Hand Shop na regional Tiago (R$ 868.000).</li>
+      <li>Medical: cerca de R$ 20,4 mi em 2026, canal online atendido por Geraldo no PR. Fora da base por padrão; incluída na regional Tati quando o botão está em “Sim”.</li>
+      <li>RCAs: quadro previsto, incluindo vagas novas (marcadas como “novo”).</li>
+      <li>Movimentação: BA e SE passam de Rapha para Tiago, com o Cirúrgico da RCA REPMED (R$ 2.554.601), R$ 290.000 do Farma, os 2 RCAs Farma da BA e a vaga nova de SE/AL.</li>
+      <li>Farma do Tiago inclui R$ 1.614.000 de contas antes atendidas diretamente pelo supervisor nacional. Esse valor não sai de nenhuma regional e aumenta o total Brasil.</li>
+      
+    </ul>
+  </div>
+</div>
+
+<script>
+const STATES = [{"s":["RR"],"d":"M360,64L354,64L351,67L351,70L345,76L336,79L333,87L327,94L324,95L318,93L314,98L308,101L296,100L296,106L291,111L288,111L284,106L281,105L275,107L272,104L264,106L261,104L261,101L257,101L254,105L237,105L243,117L251,117L254,120L254,129L251,133L251,138L254,141L254,148L256,150L272,148L276,153L283,154L283,162L285,164L284,169L295,178L297,185L295,192L295,203L299,209L301,216L299,223L296,226L296,230L303,232L305,238L309,242L315,241L314,235L317,229L327,221L332,220L339,226L346,226L350,222L349,217L351,210L362,197L396,197L394,190L396,186L396,176L393,173L385,172L381,168L381,162L375,161L372,157L374,150L368,145L369,130L375,123L374,117L382,108L383,103L378,98L378,92L376,90L365,88L363,86L362,82L364,75L361,71Z"},{"s":["AP"],"d":"M589,92L585,93L582,99L574,106L567,118L560,123L559,133L555,141L551,145L547,145L543,150L537,148L535,151L531,149L531,145L526,145L520,149L512,149L509,147L505,148L507,155L505,165L516,166L518,170L526,170L531,175L531,181L535,181L542,186L546,196L544,205L545,211L553,217L553,222L558,225L559,232L565,232L574,223L579,223L585,211L589,207L599,207L606,197L612,192L613,186L619,180L622,180L627,173L627,165L620,160L617,152L617,146L614,145L610,150L607,147L604,125L599,121L599,117L595,113L595,104Z"},{"s":["PA"],"d":"M468,141L467,151L469,157L467,160L445,160L443,158L434,159L429,167L425,167L423,169L417,167L411,171L412,175L409,178L405,176L401,176L399,178L400,185L398,188L398,220L404,227L404,234L417,241L424,239L432,242L438,252L449,252L451,255L450,260L462,258L465,261L465,266L460,271L459,276L454,283L446,301L441,305L431,325L427,329L425,340L419,345L417,352L410,361L403,366L403,369L407,373L409,381L413,384L417,392L417,397L422,402L422,416L426,419L427,423L433,423L437,431L443,433L458,434L462,436L471,436L521,444L543,449L557,450L568,453L576,453L578,447L583,444L592,425L595,422L598,422L603,414L608,411L611,397L620,390L621,386L625,382L630,368L632,367L631,362L635,357L634,350L638,346L638,344L633,340L633,333L631,330L632,318L635,312L641,310L643,306L648,302L650,302L655,307L660,304L663,305L666,301L669,300L668,295L673,290L679,290L684,286L684,281L689,276L698,276L704,269L704,266L709,262L708,256L714,253L714,247L720,243L720,240L724,238L725,235L723,233L723,230L709,230L704,223L697,222L694,219L687,221L686,219L681,219L678,223L675,223L672,226L672,230L666,235L663,241L658,242L652,249L647,246L641,250L639,248L646,243L648,238L656,237L658,235L659,229L664,224L663,218L666,214L666,209L648,208L645,203L641,203L639,205L635,203L627,203L625,200L631,198L630,194L625,194L622,197L618,196L623,189L623,186L617,187L615,193L608,199L601,209L595,212L590,210L585,220L577,230L572,230L565,236L559,235L555,232L555,226L549,222L550,218L548,218L542,212L541,202L543,196L541,194L540,188L535,185L530,185L527,181L528,176L525,173L518,174L515,169L504,168L501,164L504,155L501,152L502,145L499,142L499,138L496,137L493,140L480,139L475,146L472,144L472,141Z"},{"s":["AM"],"d":"M461,261L448,263L446,261L446,257L437,255L431,249L430,244L415,243L405,238L400,232L401,228L396,223L396,203L392,200L378,202L363,200L354,211L353,223L346,230L339,230L334,224L328,224L320,230L318,235L318,242L315,245L312,246L307,244L302,240L302,237L299,233L294,232L292,227L297,221L297,213L293,210L293,205L291,203L291,193L294,189L292,178L281,170L281,157L275,156L272,152L258,160L256,168L252,172L246,171L239,179L235,179L233,185L225,185L223,187L223,192L220,195L216,193L217,186L213,183L209,184L205,189L197,191L192,186L192,182L188,178L181,177L180,166L174,159L175,155L170,154L168,159L160,167L155,163L152,163L150,165L152,170L149,173L105,173L102,176L102,182L104,184L104,188L102,190L103,195L114,196L118,194L121,201L119,203L112,201L106,204L100,204L92,218L92,223L100,229L101,234L105,237L106,244L110,246L111,250L115,251L112,267L99,310L95,317L89,317L87,315L88,311L77,310L73,315L68,317L61,316L56,321L46,324L38,334L32,336L30,352L22,361L21,369L23,372L19,377L10,383L8,389L10,393L71,406L75,405L91,416L103,421L107,421L115,427L140,438L146,437L152,443L156,443L159,446L172,445L175,437L184,433L189,436L191,436L195,431L201,433L202,427L208,425L208,419L211,416L216,415L218,417L227,417L229,415L232,415L233,411L236,408L236,403L240,399L240,394L244,391L248,392L253,388L259,390L270,389L276,397L281,397L284,399L285,404L290,408L291,411L297,410L301,413L308,413L310,417L390,418L393,415L393,410L399,406L399,398L404,391L406,380L404,374L400,370L400,366L413,353L416,344L422,339L425,327L439,303L443,300L452,281L456,276L456,272L462,266Z"},{"s":["MA","PI"],"d":"M734,239L723,241L723,244L716,249L717,255L712,257L712,262L707,267L707,270L697,280L690,279L687,282L687,287L680,293L673,293L671,296L672,301L664,308L661,308L657,311L650,306L645,307L645,310L638,313L635,318L636,324L634,330L639,334L637,340L641,343L641,347L638,350L638,355L648,356L653,366L657,367L664,373L664,378L662,381L664,395L659,403L657,410L666,416L667,423L673,430L672,435L667,440L667,448L676,456L676,461L679,464L678,472L682,475L689,473L692,477L692,480L700,483L704,478L711,476L720,459L728,456L730,458L733,458L739,454L742,447L749,440L750,436L755,434L756,429L759,428L762,423L764,423L767,416L765,412L768,405L768,400L764,396L767,380L765,371L768,361L767,354L771,350L773,343L771,330L766,326L766,324L761,321L761,316L765,313L765,310L768,306L767,297L764,294L767,283L766,277L773,271L776,262L781,258L781,255L773,256L770,253L767,253L764,256L761,256L754,253L747,245L737,245Z"},{"s":["CE"],"d":"M795,256L791,259L784,259L778,265L776,272L770,277L768,295L771,297L772,306L769,309L768,314L764,317L764,320L767,321L775,330L776,346L774,351L771,353L771,363L769,369L769,375L771,378L768,396L780,397L784,394L796,392L802,399L806,401L806,405L810,405L815,408L820,405L821,401L826,396L823,385L828,379L828,368L832,364L834,364L835,359L842,352L842,346L850,341L850,336L854,332L854,329L861,324L861,321L864,317L868,316L871,312L875,312L875,308L869,303L869,300L866,296L866,290L862,287L857,287L848,279L848,275L846,273L840,274L832,270L824,260L801,259L800,256Z"},{"s":["RN"],"d":"M909,330L900,319L894,317L894,314L885,316L881,313L878,313L875,316L866,319L864,326L858,329L857,333L853,336L853,343L845,348L845,353L839,360L838,365L843,367L853,366L856,362L869,361L871,358L876,356L886,357L889,361L895,361L898,358L902,358L904,361L909,359Z"},{"s":["TO"],"d":"M639,358L635,362L635,367L628,383L624,387L623,391L614,398L614,404L611,412L606,416L600,425L597,425L595,427L586,445L581,448L581,452L577,456L575,456L574,462L568,471L565,494L558,500L560,505L559,512L557,515L557,520L553,523L553,526L555,528L552,531L552,539L553,541L558,541L562,545L566,545L570,542L579,542L582,549L590,548L593,550L603,550L606,553L606,557L610,557L613,560L622,560L625,556L631,556L634,560L638,560L640,562L644,560L650,562L652,560L661,561L661,554L665,548L662,539L669,531L668,515L674,505L674,502L671,499L671,492L673,488L673,481L676,478L676,465L672,463L672,456L668,452L666,452L663,447L663,441L669,433L669,429L664,425L663,417L659,416L653,410L653,407L661,394L658,386L658,381L661,378L660,373L651,369L646,359Z"},{"s":["PB"],"d":"M909,363L904,365L901,362L898,362L895,365L890,365L884,360L877,359L869,365L865,364L862,367L856,366L852,370L843,371L834,367L831,372L832,380L828,384L830,395L825,402L824,407L829,408L838,404L850,407L858,404L861,401L869,401L875,405L876,411L886,410L890,405L895,403L903,404L903,402L909,397Z"},{"s":["MT"],"d":"M571,456L435,434L432,431L432,426L426,426L419,418L417,413L419,404L416,403L414,394L410,387L408,387L408,390L404,395L402,400L402,407L397,411L396,417L391,421L313,420L311,438L314,442L314,448L309,456L308,462L313,465L314,473L320,473L323,476L323,481L334,481L338,485L338,491L335,494L335,499L338,502L340,508L334,513L334,520L325,530L325,539L321,543L313,547L313,551L307,559L307,564L303,568L296,569L295,571L296,575L299,578L299,585L294,594L294,597L300,608L300,611L296,615L298,641L325,641L332,639L342,640L344,650L341,665L343,667L347,666L350,668L367,663L371,655L381,647L388,651L395,650L399,653L406,653L408,657L414,660L419,660L431,653L441,658L446,652L452,651L458,646L463,650L469,649L473,644L476,636L480,633L481,627L490,621L490,616L493,613L499,612L501,605L507,605L507,601L510,597L514,597L516,599L519,598L519,593L522,587L529,582L530,570L535,565L539,565L542,562L547,550L546,546L549,542L549,522L554,519L556,507L554,500L561,493L563,478L565,476L564,471L571,460Z"},{"s":["RO"],"d":"M253,392L249,395L243,395L243,400L239,404L240,409L236,412L236,415L233,418L230,418L227,421L212,419L212,426L206,429L205,433L202,436L199,437L195,435L192,439L188,439L186,437L178,439L177,444L171,449L171,451L167,455L162,456L162,460L167,459L173,465L173,470L177,479L177,483L173,490L174,495L179,496L182,499L185,508L189,509L196,518L196,524L201,524L205,528L205,532L213,532L217,528L220,528L223,531L227,531L229,533L229,537L234,542L238,541L241,544L241,548L247,548L250,551L260,549L269,561L274,562L276,560L284,560L287,565L293,568L296,565L303,564L303,558L309,551L310,545L322,538L321,531L330,520L330,513L336,508L336,505L331,499L332,493L335,488L333,485L322,484L319,481L319,477L313,477L309,472L310,467L304,464L305,457L310,450L310,441L308,439L309,420L306,416L291,416L282,405L282,402L274,400L269,393L260,394Z"},{"s":["AC"],"d":"M4,402L4,407L10,412L11,419L16,427L15,432L18,435L22,436L24,439L25,447L21,455L21,461L25,461L28,457L41,457L42,463L50,470L51,478L55,480L59,479L62,476L68,477L73,473L76,477L81,496L89,494L94,488L108,487L111,492L114,492L119,487L125,489L129,487L135,480L145,481L150,476L161,475L167,467L166,463L161,464L157,459L161,452L165,452L165,450L159,450L156,447L150,446L146,441L138,441L130,436L120,433L106,424L99,423L84,416L76,409L68,409L42,404L8,396L8,400Z"},{"s":["PE"],"d":"M749,444L749,447L755,450L759,449L764,453L775,447L779,451L786,452L787,457L796,454L804,462L812,463L822,454L826,456L833,455L836,458L847,456L856,449L865,449L867,451L875,452L881,447L892,446L895,451L899,451L903,448L909,448L909,402L904,408L895,407L891,408L886,414L876,415L872,411L872,407L869,405L862,405L850,411L842,408L837,408L828,412L825,412L822,409L814,412L808,408L804,408L802,406L802,403L797,399L797,396L784,398L780,401L774,400L771,402L771,406L769,408L770,418L768,420L768,423L763,427L761,431L758,432L758,435L754,437Z"},{"s":["BA"],"d":"M679,479L676,483L677,488L675,491L679,503L671,516L673,530L668,537L670,546L665,553L664,574L668,574L672,578L672,581L667,588L667,592L671,596L671,600L678,604L683,603L686,599L690,598L696,602L698,610L701,610L704,607L708,606L708,604L712,600L717,599L722,595L727,599L727,602L730,605L731,609L736,610L738,608L742,608L747,614L759,613L766,618L766,621L771,624L771,628L776,631L787,632L792,637L796,637L798,635L820,637L823,640L824,644L835,646L834,638L838,632L836,625L836,614L840,604L837,597L831,591L830,581L832,574L829,568L837,563L839,556L836,553L836,548L832,545L832,533L829,533L822,525L816,509L819,504L826,503L824,488L822,485L819,485L815,482L814,475L809,472L809,467L803,466L796,458L793,458L790,462L786,461L782,454L779,455L775,451L768,454L766,457L763,457L761,454L756,455L751,451L745,449L742,456L739,457L736,461L731,462L727,460L725,462L721,462L720,467L718,468L718,471L714,475L713,479L711,481L706,481L701,486L691,484L688,478Z"},{"s":["AL"],"d":"M909,452L903,452L897,456L890,449L880,451L877,455L855,453L848,459L837,462L833,459L826,460L822,458L817,464L813,466L813,471L816,471L818,473L818,480L825,483L828,488L828,492L834,491L842,495L848,495L850,493L856,492L859,495L869,496L872,493L882,491L887,495L893,495L894,492L899,488L900,479L909,470Z"},{"s":["SE"],"d":"M891,499L886,499L883,495L872,497L870,499L859,499L856,496L844,499L836,495L829,497L829,505L825,508L821,508L821,512L823,514L823,520L827,525L830,525L832,527L832,530L836,533L835,542L840,548L840,553L849,551L855,541L859,539L864,540L866,538L870,529L875,525L876,521L879,518L879,515L889,508Z"},{"s":["GO"],"d":"M661,565L644,564L641,566L639,564L633,563L629,559L626,559L626,563L624,565L613,564L610,561L603,559L601,553L593,554L590,552L581,552L577,545L570,546L564,549L560,548L558,545L551,545L549,556L546,559L545,563L539,569L536,569L534,571L532,583L529,587L525,588L522,600L519,603L512,601L510,603L510,606L504,609L505,613L498,617L494,617L493,623L489,627L485,628L484,633L479,638L472,651L472,655L467,660L467,671L463,675L461,675L460,678L467,679L470,682L471,687L475,690L474,698L488,698L492,704L502,703L505,706L505,714L511,714L514,718L518,718L523,723L524,730L527,730L532,726L538,728L542,723L544,723L546,719L552,716L565,716L566,712L571,706L578,707L584,701L588,701L590,699L594,699L599,703L607,701L610,704L615,704L627,694L626,688L621,684L621,679L628,673L628,661L635,652L634,645L639,641L644,642L646,640L647,630L652,626L651,617L654,613L662,614L664,605L667,601L667,597L663,593L663,588L668,581L668,578L662,578L659,574Z"},{"s":["DF"],"d":"M573,600L573,628L575,630L609,630L611,628L611,600Z"},{"s":["MG"],"d":"M820,641L814,641L812,639L807,640L799,638L797,641L790,640L786,635L780,636L775,634L768,629L768,625L764,624L762,622L762,618L758,616L746,617L741,611L731,613L724,604L723,599L720,599L718,602L713,603L709,609L704,610L701,614L695,611L692,606L692,602L687,602L686,605L680,606L678,608L669,603L665,616L654,618L655,626L650,631L648,642L645,645L637,646L638,653L631,662L631,674L624,681L624,683L629,686L630,694L626,699L616,707L609,707L607,705L597,706L594,703L589,703L584,705L582,709L572,710L565,720L558,721L553,719L547,722L546,725L543,726L539,731L532,730L528,734L523,734L522,738L525,743L521,748L517,750L517,752L526,753L531,750L534,752L539,752L543,758L546,758L550,755L553,757L563,756L566,759L565,767L570,767L574,764L581,766L584,763L590,761L598,762L604,770L603,773L605,775L605,779L616,779L619,782L625,781L632,786L633,794L631,799L637,799L640,806L636,816L639,820L640,825L646,824L648,826L648,833L650,833L655,826L659,827L660,832L664,832L669,828L671,828L674,832L681,832L686,828L689,823L688,817L694,811L701,812L707,807L709,803L713,801L727,803L733,798L733,795L738,790L738,785L753,768L751,759L755,750L762,746L765,742L768,733L767,727L771,723L779,720L779,712L786,701L789,701L794,697L794,691L801,685L801,679L804,676L803,665L807,660L817,653L817,648L821,646Z"},{"s":["ES"],"d":"M821,647L819,649L820,653L817,657L806,665L807,675L804,679L803,686L797,691L796,699L798,699L803,704L813,704L817,710L823,709L829,713L832,713L836,709L835,696L840,689L836,681L839,663L834,657L834,649Z"},{"s":["MS"],"d":"M379,651L367,667L357,669L352,676L357,694L353,703L355,713L345,720L342,734L336,740L337,745L335,749L339,752L341,761L339,767L335,770L335,775L338,782L338,790L333,806L340,806L345,809L350,805L358,806L360,809L375,808L379,803L381,803L384,807L386,815L389,815L392,818L392,824L395,830L394,839L399,839L402,842L403,849L406,852L407,858L410,858L416,854L421,859L421,863L424,866L424,874L427,875L428,870L433,863L432,857L434,849L441,843L441,840L443,838L455,834L460,828L460,824L468,816L479,815L483,804L492,797L491,792L497,785L498,781L504,778L505,772L510,764L515,760L513,750L521,743L518,738L518,735L520,733L519,724L509,717L503,718L500,714L502,708L491,708L487,702L478,703L470,699L469,697L471,691L466,688L466,683L459,682L456,678L457,674L463,670L463,660L467,656L467,653L462,654L459,650L457,650L453,655L447,655L442,661L438,661L435,658L430,657L421,663L414,664L411,661L407,661L405,657L399,657L396,654L388,655L383,651Z"},{"s":["ES"],"d":"M829,715L823,712L817,713L809,705L800,706L796,701L786,704L783,711L782,720L775,726L770,727L771,733L768,742L761,750L757,752L754,757L756,768L749,776L749,779L753,781L755,790L764,790L768,794L774,795L783,792L792,793L794,796L798,796L804,789L809,788L811,784L811,778L813,776L813,771L817,767L821,766L822,757L826,751L825,725L829,718Z"},{"s":["SP"],"d":"M454,838L454,840L465,841L467,843L481,842L486,846L506,846L516,853L517,858L524,860L548,860L550,864L555,867L555,876L560,886L560,897L567,897L569,895L578,894L581,897L582,901L579,910L585,908L589,914L596,913L598,915L600,915L602,912L605,912L615,901L625,900L635,890L644,890L652,880L656,878L662,880L665,877L676,875L679,872L679,861L684,858L686,853L686,847L682,846L680,842L682,839L681,835L674,835L671,832L660,835L657,830L654,830L651,836L647,835L645,833L645,828L640,828L633,815L636,810L636,802L631,802L628,799L630,790L629,786L625,784L619,785L615,782L609,784L606,783L602,779L600,769L596,764L591,763L588,766L580,769L574,767L573,769L565,770L562,767L563,759L555,761L552,759L542,760L538,755L529,753L526,756L518,756L517,763L513,766L508,774L507,779L501,783L498,790L495,792L495,798L486,805L482,816L475,820L468,820L463,825L463,829Z"},{"s":["RJ"],"d":"M797,799L791,796L780,795L775,798L768,797L764,793L755,793L752,790L751,783L745,780L741,785L741,790L736,795L735,800L729,805L723,806L720,804L713,804L701,815L694,814L691,816L691,824L689,826L689,829L684,833L684,843L689,846L690,850L688,852L687,858L681,864L682,871L685,872L689,867L694,868L696,866L700,866L706,872L712,870L715,871L717,875L720,875L723,872L731,871L736,867L745,867L748,863L748,860L754,854L766,852L779,837L778,830L785,821L785,818L791,813L792,808L797,803Z"},{"s":["PR"],"d":"M401,932L402,935L409,933L412,936L413,940L420,938L436,940L445,937L451,943L465,944L471,951L481,951L486,949L492,953L497,953L500,956L504,955L508,957L514,952L519,952L520,948L523,946L530,947L534,943L538,944L543,941L551,940L557,943L561,943L566,940L571,943L584,942L588,927L597,921L597,917L588,917L585,912L578,914L575,911L576,906L579,904L577,897L561,901L557,898L557,887L552,876L552,868L549,867L546,862L543,862L541,864L534,864L533,862L525,863L522,861L516,861L513,858L513,854L506,849L486,849L481,845L474,845L469,847L465,844L458,845L450,840L446,840L444,842L444,845L437,851L437,862L432,869L432,876L426,879L426,883L419,893L420,901L411,913L409,922L404,926Z"},{"s":["SC"],"d":"M396,971L398,975L408,974L412,977L427,973L432,977L433,980L438,980L441,982L448,981L451,986L457,985L460,988L461,992L468,992L472,997L476,997L480,1001L488,1002L496,1014L502,1015L506,1018L508,1024L505,1028L505,1031L519,1033L521,1035L521,1041L527,1044L537,1033L543,1029L550,1028L550,1023L553,1020L557,1019L564,1011L570,1010L573,1007L573,1002L581,991L579,985L583,974L582,960L583,957L587,954L587,950L584,945L580,944L575,946L564,944L560,947L550,943L534,947L530,950L523,949L519,955L513,955L508,960L499,959L497,956L490,955L486,952L481,954L471,954L465,947L455,947L449,945L446,940L435,943L419,941L417,943L413,943L413,955L409,962L405,965L398,966Z"},{"s":["RS"],"d":"M384,977L382,979L382,983L374,988L366,998L361,998L355,1003L354,1010L347,1016L345,1021L338,1024L332,1034L324,1041L321,1041L319,1043L319,1047L313,1052L313,1060L318,1061L325,1055L331,1054L344,1070L349,1084L354,1084L357,1081L361,1085L362,1091L375,1091L382,1102L390,1103L396,1108L396,1113L403,1122L411,1128L413,1134L413,1140L408,1147L407,1162L409,1164L412,1164L421,1154L425,1154L432,1149L435,1144L435,1138L439,1134L440,1127L443,1123L448,1120L452,1120L457,1113L463,1111L467,1105L475,1098L485,1097L490,1092L493,1086L503,1079L515,1063L517,1057L524,1052L524,1045L519,1043L518,1036L514,1037L510,1034L505,1034L502,1031L504,1020L495,1017L486,1004L480,1004L476,1000L471,1000L467,995L459,994L457,988L450,990L447,984L442,985L433,983L427,976L423,976L414,980L407,977L399,979L394,975Z"}];
+const LABELS = {RR:[327,145],AP:[578,172],AM:[229,294],PA:[523,318],MA:[708,346],PI:[724,406],CE:[814,314],RN:[885,343],PB:[890,383],PE:[858,432],AL:[872,476],SE:[853,517],BA:[757,531],AC:[80,445],RO:[254,477],MT:[440,524],TO:[620,492],GO:[541,665],DF:[593,614],MS:[421,756],MG:[697,710],ES:[793,751],RJ:[733,834],SP:[563,828],PR:[497,904],SC:[525,982],RS:[436,1045]};
+const SMALL = new Set(['RN','PB','AL','SE','DF','ES','RJ']);
+const MESES_F = 9, MESES_C = 9.5; /* Farma: jan–set; Cirúrgico e Medical: jan até a 2ª semana de outubro */
+const MEDICAL = {total:20400000};
+
+/* a: [UFs, atuais, novos] */
+const REGIONS = [
+  {id:'rapha', nome:'Rapha', area:'Nordeste', ufs:['AL','PE','PB','RN','CE'], farma:2770506, cir:11181399,
+   rf:[['PE',1,0],['PB/RN',1,0],['CE',1,1]], rc:[['PE/PB/CE/RN/AL',1,0]],
+   nota:'BA e SE passam para o Tiago: Cirúrgico da RCA REPMED (R$ 2.554.601) e R$ 290.000 do Farma, com os RCAs Farma da BA e a vaga nova de SE/AL.'},
+  {id:'aline', nome:'Aline', area:'Centro-Oeste e Norte', ufs:['GO','MS','MT','RO','TO','DF','AC'], farma:3058222, cir:6463000,
+   rf:[['GO/MT/MS',2,1],['TO',1,0],['AC',1,0],['RO',1,0]], rc:[['MT/MS/GO/DF',1,0],['TO/GO/DF',1,0]]},
+  {id:'joao', nome:'João', area:'Norte e Nordeste', ufs:['PI','MA','PA','AM','AP','RR'], farma:4270909, cir:6882000, interno:1185000,
+   rf:[['PI',2,0],['MA',1,0],['PA',1,0],['AM',2,0],['AP',0,1],['RR',1,0]], rc:[['PI/PA/AM',1,0]],
+   nota:'Carteira AP-MA (R$ 1.185.000) volta para o interno e não está no total da regional.'},
+  {id:'tiago', nome:'Tiago', area:'Sudeste, BA e SE', ufs:['MG','RJ','ES','BA','SE'], farma:4135040, cir:8651101, interno:868000,
+   rf:[['MG',2,1],['RJ',0,1],['ES',1,0],['BA',2,0],['SE/AL',0,1]], rc:[['RJ',1,0],['MG/ES',0,1],['BA/SE',1,0]],
+   nota:'Recebe BA e SE: Cirúrgico da RCA REPMED (+R$ 2.554.601), Farma do Rapha (+R$ 290.000) e contas Farma antes atendidas pelo supervisor nacional (+R$ 1.614.000). Hand Shop (R$ 868.000) volta para o interno e não está no total da regional. Possibilidade futura de incorporar Indiana e Araújo.'},
+  {id:'patricia', nome:'Patrícia', area:'São Paulo', ufs:['SP'], farma:387955, cir:7232000,
+   rf:[['SP',4,2]], rc:[['SP',3,1]]},
+  {id:'tati', nome:'Tati', area:'Sul', ufs:['RS','SC','PR'], farma:342759, cir:12134000,
+   rf:[['SC',1,0],['RS',1,0],['PR',2,0]], rc:[['SC/PR',1,0],['RS',1,0]], medical:true,
+   nota:'Tati deixa a supervisão de Trade e assume como Líder Regional.'}
+];
+REGIONS.forEach(r=>{
+  const sum=a=>a.reduce((s,x)=>s+x[1]+x[2],0), nov=a=>a.reduce((s,x)=>s+x[2],0);
+  r.nF=sum(r.rf); r.nC=sum(r.rc); r.n=r.nF+r.nC; r.novos=nov(r.rf)+nov(r.rc);
+  r.c=`var(--r-${r.id})`;
+});
+const UF2R={}; REGIONS.forEach(r=>r.ufs.forEach(u=>UF2R[u]=r));
+const ufTxt=(r,sep)=>r.ufs.join(sep)+(r.ufsC?` + ${r.ufsC.join(sep)} (Cir.)`:'');
+let MED=false;
+
+const brl=v=>'R$ '+Math.round(v).toLocaleString('pt-BR');
+const mi=(v,d=1)=>'R$ '+(v/1e6).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+' mi';
+const pc=(v,d=0)=>(v*100).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+
+function val(r){
+  const med=(MED&&r.medical)?MEDICAL.total:0;
+  const total=r.farma+r.cir+med;
+  return {farma:r.farma,cir:r.cir,med,total,media:r.farma/MESES_F+(r.cir+med)/MESES_C};
+}
+function totals(){
+  const t={farma:0,cir:0,med:0,total:0,media:0,n:0,nF:0,nC:0,novos:0};
+  REGIONS.forEach(r=>{const v=val(r);['farma','cir','med','total','media'].forEach(k=>t[k]+=v[k]);t.n+=r.n;t.nF+=r.nF;t.nC+=r.nC;t.novos+=r.novos;});
+  return t;
+}
+
+document.getElementById('medHint').textContent=mi(MEDICAL.total);
+document.getElementById('leaderChips').innerHTML=REGIONS.map(r=>`<span class="chip"><i class="dot" style="background:${r.c}"></i>${r.nome}</span>`).join('');
+
+/* Mapa */
+const NS='http://www.w3.org/2000/svg', map=document.getElementById('map'), paths=[];
+map.innerHTML='<defs><pattern id="splitBA" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="22" height="22" fill="var(--r-rapha)"/><rect width="8" height="22" fill="var(--r-tiago)"/></pattern></defs>';
+const SPLIT={};
+STATES.forEach(s=>{
+  const r=UF2R[s.s[0]]; if(!r) return;
+  const p=document.createElementNS(NS,'path');
+  p.setAttribute('d',s.d); p.setAttribute('fill',SPLIT[s.s[0]]?'url(#splitBA)':r.c); p.setAttribute('class','region-path'); p.dataset.r=r.id; if(SPLIT[s.s[0]]) p.dataset.r2=SPLIT[s.s[0]];
+  const t=document.createElementNS(NS,'title'); t.textContent=SPLIT[s.s[0]]?`${s.s[0]} · Farma: ${r.nome} · Cirúrgico: Tiago`:`${s.s.join(' / ')} · Líder ${r.nome}`; p.appendChild(t);
+  p.addEventListener('click',()=>select(r.id,true));
+  map.appendChild(p); paths.push(p);
+});
+Object.entries(LABELS).forEach(([uf,[x,y]])=>{
+  const r=UF2R[uf], t=document.createElementNS(NS,'text');
+  t.setAttribute('x',x); t.setAttribute('y',y); t.setAttribute('class','st-label'+(SMALL.has(uf)?' sm':''));
+  t.setAttribute('fill',r.id==='patricia'?'var(--label-on-yellow)':'var(--label-on-region)');
+  t.textContent=uf; map.appendChild(t);
+});
+
+const list=document.getElementById('regList');
+let current=null;
+function renderList(){
+  list.innerHTML=REGIONS.map(r=>{const v=val(r);return `<button class="reg" style="--c:${r.c}" data-r="${r.id}" aria-pressed="${r.id===current}">
+    <span class="n">${r.nome}</span><span class="u">${ufTxt(r,' · ')}</span>
+    <span class="big"><span><b>${r.n}</b> RCAs</span><span><b>${mi(v.media,2)}</b> média mês 2026</span></span></button>`}).join('');
+  list.querySelectorAll('.reg').forEach(b=>b.addEventListener('click',()=>select(b.dataset.r,true)));
+}
+function select(id,toggle){
+  current=(toggle&&current===id)?null:id;
+  document.getElementById('mapBox').classList.toggle('has-sel',!!current);
+  paths.forEach(p=>p.classList.toggle('on',p.dataset.r===current||p.dataset.r2===current));
+  list.querySelectorAll('.reg').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.r===current)));
+  renderDetail();
+}
+const allocList=a=>a.map(([u,at,nv])=>`<li><span>${u}</span><span>${at}${nv?`<span class="nv">+${nv} novo${nv>1?'s':''}</span>`:''}</span></li>`).join('');
+function mixRows(v){
+  return `<div class="mixbar" aria-hidden="true"><span style="width:${v.farma/v.total*100}%;background:var(--farma)"></span><span style="width:${v.cir/v.total*100}%;background:var(--cir)"></span>${v.med?`<span style="width:${v.med/v.total*100}%;background:var(--med)"></span>`:''}</div>
+   <div class="brk-row"><span><i class="dot" style="background:var(--farma)"></i> Farma · Behikes (${pc(v.farma/v.total)})</span><span class="val">${brl(v.farma)}</span></div>
+   <div class="brk-row"><span><i class="dot" style="background:var(--cir)"></i> Cirúrgico · Boinas Azuis (${pc(v.cir/v.total)})</span><span class="val">${brl(v.cir)}</span></div>
+   ${v.med?`<div class="brk-row"><span><i class="dot" style="background:var(--med)"></i> Medical · canal online (${pc(v.med/v.total)})</span><span class="val">${brl(v.med)}</span></div>`:''}
+   <div class="brk-row tot"><span>Total 2026</span><span class="val">${brl(v.total)}</span></div>`;
+}
+function renderDetail(){
+  const d=document.getElementById('detail');
+  if(!current){
+    const t=totals();
+    d.style.setProperty('--c','var(--accent)');
+    d.innerHTML=`<div class="hd"><div><div class="eyebrow">Supervisor Nacional</div><h3>Brasil · visão consolidada</h3></div></div>
+      <div class="hero-stats">
+        <div class="hs"><span class="v">${t.n}</span><span class="l">RCAs · ${t.nF} Behikes + ${t.nC} Boinas Azuis (${t.novos} vagas novas)</span></div>
+        <div class="hs"><span class="v">${mi(t.media,2)}</span><span class="l">Média mês 2026</span></div>
+      </div>
+      <div class="brk">${mixRows(t)}</div>`;
+    return;
+  }
+  const r=REGIONS.find(x=>x.id===current), v=val(r);
+  d.style.setProperty('--c',r.c);
+  d.innerHTML=`<div class="hd"><div><div class="eyebrow" style="color:${r.c}">Líder Regional · ${r.area}</div><h3>${r.nome}</h3></div>
+      <div class="ufs">${r.ufs.map(u=>`<span class="uf">${u}</span>`).join('')}${(r.ufsC||[]).map(u=>`<span class="uf" title="Somente Cirúrgico">${u} · Cir.</span>`).join('')}</div></div>
+    <div class="hero-stats">
+      <div class="hs"><span class="v">${r.n}</span><span class="l">RCAs · ${r.nF} Behikes + ${r.nC} Boinas Azuis${r.novos?` (${r.novos} novo${r.novos>1?'s':''})`:''}</span></div>
+      <div class="hs"><span class="v">${mi(v.media,2)}</span><span class="l">Média mês 2026${MED&&r.medical?' (com Medical)':''}</span></div>
+    </div>
+    <div class="alloc">
+      <div style="--c:var(--farma)"><h4>Behikes · Farma (${r.nF})</h4><ul>${allocList(r.rf)}</ul></div>
+      <div style="--c:var(--cir)"><h4>Boinas Azuis · Cirúrgico (${r.nC})</h4><ul>${allocList(r.rc)}</ul></div>
+    </div>
+    <div class="brk">${mixRows(v)}</div>
+    ${r.nota?`<div class="note">${r.nota}</div>`:''}`;
+}
+
+function renderKpis(){
+  const t=totals();
+  document.getElementById('kpis').innerHTML=[
+    {v:mi(t.total), l:'Faturamento 2026 (Farma jan–set · Cir. até 2ª sem. out)', d:`Média mês ${mi(t.media,2)}`, cls:MED?'medon':''},
+    {v:mi(t.farma), l:'Farma · Behikes', d:`${pc(t.farma/t.total)} do total · ${t.nF} RCAs`, cls:'farma'},
+    {v:mi(t.cir), l:'Cirúrgico · Boinas Azuis', d:`${pc(t.cir/t.total)} do total · ${t.nC} RCAs`, cls:'cir'},
+    MED?{v:mi(t.med), l:'Medical · canal online (PR)', d:`${pc(t.med/t.total)} do total · incluída`, cls:'medon'}
+       :{v:String(t.n), l:'RCAs nas seis regionais', d:`${t.novos} vagas novas no quadro`}
+  ].map(x=>`<div class="kpi ${x.cls||''}"><span class="v">${x.v}</span><span class="l">${x.l}</span><span class="d muted">${x.d}</span></div>`).join('');
+  document.getElementById('teamF').textContent=`${t.nF} RCAs Farma, atuação focada no canal`;
+  document.getElementById('teamC').textContent=`${t.nC} RCAs Cirúrgico, atuação focada no canal`;
+}
+
+function drawChart(){
+  const svg=document.getElementById('chart');
+  const rows=[...REGIONS].map(r=>({r,v:val(r)})).sort((a,b)=>b.v.total-a.v.total);
+  const top=Math.max(...rows.map(x=>x.v.total));
+  const max=Math.ceil(top/5e6)*5e6;
+  const W=900,left=110,right=190,pad=10,rowH=46,barH=24,H=pad+rows.length*rowH+34;
+  const sx=v=>left+(v/max)*(W-left-right);
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  let s=`<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--surface)"/><rect width="3" height="6" fill="var(--med)"/></pattern></defs>`;
+  for(let v=0;v<=max;v+=5e6){
+    const x=sx(v);
+    s+=`<line x1="${x}" y1="${pad}" x2="${x}" y2="${H-28}" stroke="var(--line)" stroke-width="1"/>`;
+    s+=`<text x="${x}" y="${H-10}" fill="var(--muted)" font-size="12" text-anchor="middle" font-family="var(--f-body)">${v===0?'0':'R$ '+v/1e6+' mi'}</text>`;
+  }
+  rows.forEach(({r,v},i)=>{
+    const y=pad+i*rowH+(rowH-barH)/2;
+    s+=`<text x="${left-12}" y="${y+barH/2}" fill="var(--fg)" font-size="16" font-weight="700" text-anchor="end" dominant-baseline="central" font-family="var(--f-display)">${r.nome}</text>`;
+    let x=sx(0);
+    const seg=(n,fill,label,stroke)=>{ if(!n) return; const w=sx(n)-sx(0); s+=`<rect x="${x}" y="${y}" width="${w}" height="${barH}" fill="${fill}"${stroke?` stroke="${stroke}" stroke-width="1.5"`:''}><title>${label}: ${brl(n)}</title></rect>`; x+=w; };
+    seg(v.farma,'var(--farma)','Farma'); seg(v.cir,'var(--cir)','Cirúrgico'); seg(v.med,'url(#hatch)','Medical','var(--med)');
+    s+=`<text x="${x+8}" y="${y+barH/2}" fill="var(--fg)" font-size="13" dominant-baseline="central" font-family="var(--f-body)"><tspan font-weight="700">${mi(v.total)}</tspan><tspan fill="var(--muted)"> · Farma ${pc(v.farma/v.total)} · Cir ${pc(v.cir/v.total)}</tspan></text>`;
+  });
+  svg.innerHTML=s;
+  document.getElementById('lgMed').hidden=!MED;
+}
+
+function renderTable(){
+  const t=totals();
+  document.getElementById('thead').innerHTML=`<tr><th>Líder</th><th>UFs</th><th>RCAs Behikes</th><th>RCAs Boinas Azuis</th><th class="f">Farma 2026</th><th class="c">Cirúrgico 2026</th>${MED?'<th class="m">Medical</th>':''}<th>Total 2026</th><th>Part.</th><th>Média mês 2026</th><th>Volta p/ interno</th></tr>`;
+  document.getElementById('tbody').innerHTML=[...REGIONS].map(r=>({r,v:val(r)})).sort((a,b)=>b.v.total-a.v.total).map(({r,v})=>`<tr>
+    <td><span class="chip" style="background:transparent;padding:0"><i class="dot" style="background:${r.c}"></i>${r.nome}</span></td>
+    <td>${ufTxt(r,', ')}</td><td>${r.nF}</td><td>${r.nC}</td>
+    <td>${brl(v.farma)}</td><td>${brl(v.cir)}</td>${MED?`<td>${v.med?brl(v.med):'–'}</td>`:''}
+    <td><b>${brl(v.total)}</b></td><td>${pc(v.total/t.total,1)}</td><td>${brl(v.media)}</td><td class="muted">${r.interno?brl(r.interno):'–'}</td></tr>`).join('');
+  document.getElementById('tfoot').innerHTML=`<tr><td>Total</td><td>27 UFs</td><td>${t.nF}</td><td>${t.nC}</td><td>${brl(t.farma)}</td><td>${brl(t.cir)}</td>${MED?`<td>${brl(t.med)}</td>`:''}<td>${brl(t.total)}</td><td>100%</td><td>${brl(t.media)}</td><td>${brl(REGIONS.reduce((s,r)=>s+(r.interno||0),0))}</td></tr>`;
+}
+
+function renderAll(){ renderKpis(); renderList(); renderDetail(); drawChart(); renderTable(); }
+function setMed(on){
+  MED=on;
+  document.getElementById('medYes').setAttribute('aria-pressed',String(on));
+  document.getElementById('medNo').setAttribute('aria-pressed',String(!on));
+  renderAll();
+}
+document.getElementById('medYes').addEventListener('click',()=>setMed(true));
+document.getElementById('medNo').addEventListener('click',()=>setMed(false));
+renderAll(); select(null);
+
+/* Tema */
+const root=document.documentElement, btn=document.getElementById('themeBtn');
+const SUN='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+const MOON='<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>';
+const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+function syncBtn(){const d=isDark();document.getElementById('themeIcon').innerHTML=d?SUN:MOON;document.getElementById('themeTxt').textContent=d?'Tema claro':'Tema escuro';}
+try{const saved=localStorage.getItem('boped-theme');if(saved==='dark'||saved==='light')root.dataset.theme=saved;}catch(e){}
+btn.addEventListener('click',()=>{const next=isDark()?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('boped-theme',next);}catch(e){}syncBtn();});
+try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',syncBtn);}catch(e){}
+syncBtn();
+</script>
+
+</body>
+</html>
