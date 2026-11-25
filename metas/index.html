@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Metas BOPED 2027 · por representante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F3F5F9; --surface:#FFFFFF; --surface-2:#E9EDF4; --line:#D5DCE7;
+  --fg:#152036; --muted:#5A6781; --accent:#1C3F8F; --accent-soft:#E2E9F8;
+  --farma:#0F7C6E; --cir:#1C3F8F; --new:#9A6400; --new-bg:#FBF0D6; --up:#1E7A45; --down:#B3261E; --edit:#7A3FB8; --edit-bg:#F1E8FB;
+  --r-rapha:#6B39A8; --r-aline:#2C8A4A; --r-joao:#1667C2; --r-tiago:#E66A0A; --r-patricia:#E3AC0B; --r-tati:#D23434;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1320; --surface:#151D2D; --surface-2:#1C2639; --line:#2A3650;
+  --fg:#E6EBF4; --muted:#97A3BB; --accent:#8EAEFF; --accent-soft:#1B2A4C;
+  --farma:#3CC2AE; --cir:#8EAEFF; --new:#F2BE55; --new-bg:#3A2E12; --up:#5CCB8A; --down:#FF8A80; --edit:#C9A2F5; --edit-bg:#2C2142;
+  --r-rapha:#9A6BDB; --r-aline:#4DB46D; --r-joao:#4A8FE6; --r-tiago:#F38A36; --r-patricia:#F2C53D; --r-tati:#EC5B5B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1320; --surface:#151D2D; --surface-2:#1C2639; --line:#2A3650;
+  --fg:#E6EBF4; --muted:#97A3BB; --accent:#8EAEFF; --accent-soft:#1B2A4C;
+  --farma:#3CC2AE; --cir:#8EAEFF; --new:#F2BE55; --new-bg:#3A2E12; --up:#5CCB8A; --down:#FF8A80; --edit:#C9A2F5; --edit-bg:#2C2142;
+  --r-rapha:#9A6BDB; --r-aline:#4DB46D; --r-joao:#4A8FE6; --r-tiago:#F38A36; --r-patricia:#F2C53D; --r-tati:#EC5B5B; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5;padding:0 max(16px,env(safe-area-inset-left,0px)) 48px}
+.wrap{max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+h1,h2,h3{font-family:var(--f-display);margin:0;letter-spacing:.01em;text-wrap:balance}
+h2{font-size:1.75rem} p{margin:0}
+.eyebrow{font-family:var(--f-display);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;color:var(--accent)}
+.muted{color:var(--muted)}
+section{display:flex;flex-direction:column;gap:14px}
+.sec-head{display:flex;flex-direction:column;gap:4px;max-width:80ch}
+header.top{padding-top:28px;display:flex;flex-direction:column;gap:8px}
+header.top h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;line-height:1;text-transform:uppercase}
+header.top h1 span{color:var(--accent)}
+.vtag{font:700 .72rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:4px;background:var(--new-bg);color:var(--new);margin-left:8px}
+.sub{color:var(--muted);max-width:80ch}
+.controls{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:2px solid var(--fg);padding:10px 0;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:-16px}
+.ctl{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;font:600 .88rem var(--f-body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.save{font-size:.82rem;color:var(--muted)}
+.save b{color:var(--edit)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:3px;flex-wrap:wrap}
+.seg button{font:600 .85rem var(--f-body);color:var(--muted);background:transparent;border:0;border-radius:999px;padding:4px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.banner{background:var(--edit-bg);border:1px solid var(--edit);border-radius:8px;padding:10px 14px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:.92rem}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.kpi .v{font-family:var(--f-display);font-size:2.1rem;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:.85rem;color:var(--muted)} .kpi .d{font-size:.85rem;font-weight:600}
+.kpi.hero{border:2px solid var(--accent)}
+.up{color:var(--up)} .dn{color:var(--down)}
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.how div{background:var(--surface);border-top:3px solid var(--accent);border-radius:0 0 10px 10px;padding:12px 14px;font-size:.9rem}
+.how b{font-family:var(--f-display);font-size:1.1rem;display:block}
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{padding:8px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap;vertical-align:top}
+th{font:600 .72rem var(--f-body);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--surface-2);white-space:normal;vertical-align:bottom}
+th.l,td.l{text-align:left}
+tfoot td{font-weight:700;background:var(--surface-2);border-bottom:0}
+.sum td:first-child{font-weight:600}
+.lb{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:10px;overflow:hidden}
+.lb>header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:12px 16px}
+.lb>header h3{font-size:1.45rem}
+.lb>header .s{font-size:.88rem;color:var(--muted)}
+.lb .tw{border:0;border-radius:0;border-top:1px solid var(--line)}
+.lb table{min-width:1180px}
+.nm{min-width:240px;max-width:300px;white-space:normal}
+.nm b{display:block;font-weight:600}
+.nm small{display:block;color:var(--muted);font-size:.76rem;line-height:1.35}
+.nm .crit{margin-top:3px}
+.tg{font:700 .66rem var(--f-body);padding:1px 6px;border-radius:999px;margin:2px 4px 0 0;background:var(--surface-2);color:var(--muted);display:inline-block}
+.tg.cf{color:var(--farma)} .tg.cc{color:var(--cir)}
+.pill{font:700 .7rem var(--f-body);padding:2px 8px;border-radius:999px;display:inline-block;background:var(--surface-2)}
+.p-alta{color:var(--up)} .p-queda{color:var(--down)} .p-estavel{color:var(--fg)} .p-curta,.p-vaga,.p-herd{color:var(--new);background:var(--new-bg)}
+tr.vg td{background:color-mix(in srgb,var(--new-bg) 45%,transparent)}
+tr.ed td{background:color-mix(in srgb,var(--edit-bg) 70%,transparent)}
+.in{font:600 .9rem var(--f-body);font-variant-numeric:tabular-nums;width:118px;text-align:right;padding:5px 7px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+.in.pc{width:66px}
+.in.obs{width:170px;text-align:left;font-weight:400}
+tr.ed .in.meta{border-color:var(--edit);color:var(--edit)}
+.rst{border:0;background:none;color:var(--edit);cursor:pointer;font:600 .75rem var(--f-body);padding:2px 0;display:block;margin-left:auto}
+.spark{display:block}
+.spark rect{fill:var(--c)}
+.spark rect.oct{opacity:.35}
+.filters{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.notes{font-size:.86rem;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:16px;max-width:100ch}
+.notes ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.notes b{color:var(--fg)}
+@media (max-width:980px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.how{grid-template-columns:1fr}}
+@media print{.controls,.banner{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Boped · Vendas Externas <span class="vtag">Esboço · 25/11/2026</span></div>
+    <h1>Metas <span>BOPED</span> 2027</h1>
+    <p class="sub">Meta 2027 representante a representante, partindo do faturamento realizado de janeiro a outubro de 2026 (Behikes e Boinas Azuis), já com as carteiras de 2027: KAs João e Patrícia como líderes, RCA Deise, interno fora dos totais. A coluna <b>Meta 2027</b> é editável: digite o valor em reais ou o crescimento em %.</p>
+  </header>
+
+  <div class="controls">
+    <div class="ctl">
+      <button class="btn primary" id="shareBtn" type="button">Copiar link com as metas</button>
+      <button class="btn" id="csvBtn" type="button">Baixar planilha</button>
+      <button class="btn" id="resetBtn" type="button">Voltar à sugestão</button>
+      <span class="save" id="saveTxt"></span>
+    </div>
+    <button class="btn" id="themeBtn" type="button">Tema</button>
+  </div>
+
+  <div class="banner" id="banner" hidden></div>
+
+  <section aria-label="Indicadores"><div class="kpis" id="kpis"></div></section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Como a meta sugerida foi calculada</div>
+      <h2>Ritmo de 2026, tendência recente e ajuste por situação</h2>
+    </div>
+    <div class="how">
+      <div><b>1. Base 12 meses</b>Faturamento jan–out/2026 ÷ meses em que o representante atuou × 12. Quem começou no meio do ano é medido pelo ritmo dos meses em que já vendia.</div>
+      <div><b>2. Tendência jul–set</b>Compara os pedidos de jul–set com a média do próprio representante e desconta a variação do time todo no mesmo período. Outubro fica fora: os pedidos do mês ainda estão incompletos na base.</div>
+      <div><b>3. Ajuste</b>Estável: base + 10%. Em alta (tendência acima de 120%): base × tendência, até 2× a base, + 5%. Em queda (abaixo de 80%): recuperar o ritmo médio, sem crescimento. Base curta (menos de 3 meses): base − 20%. Carteira herdada: mesmo ritmo de 2026.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Resumo por líder</div>
+      <h2>Meta 2027 por regional</h2>
+    </div>
+    <div class="tw"><table style="min-width:900px">
+      <thead><tr><th class="l">Líder</th><th class="l">UFs</th><th>Representantes</th><th>Realizado 2026 (jan–out)</th><th>Base 12 meses</th><th>Meta sugerida</th><th>Meta 2027</th><th>vs base</th><th>Meta mês</th><th>Part.</th></tr></thead>
+      <tbody id="sumBody" class="sum"></tbody><tfoot id="sumFoot"></tfoot>
+    </table></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Representante a representante</div>
+      <h2>Projete a meta de cada representante</h2>
+      <p class="muted">Edite a meta em R$ ou o % sobre a base de 12 meses. Os totais se atualizam na hora. Linhas editadas ficam em roxo; “sugestão” volta ao valor calculado.</p>
+    </div>
+    <div class="filters">
+      <div class="seg" role="group" aria-label="Filtrar por líder" id="fLid"></div>
+      <div class="seg" role="group" aria-label="Filtrar por canal" id="fCh"></div>
+    </div>
+    <div id="blocks" style="display:flex;flex-direction:column;gap:16px"></div>
+  </section>
+
+  <div class="notes">
+    <b>Onde ficam as edições</b>
+    <ul>
+      <li>As metas digitadas ficam salvas <b>somente neste navegador, neste aparelho</b>. Não há servidor: outra pessoa abrindo o link normal vê a sugestão original.</li>
+      <li>Para compartilhar, use <b>Copiar link com as metas</b>: o link carrega todas as suas alterações (valores e observações). Quem abrir passa a ver e editar a sua versão, no navegador dela. Se os dois editarem ao mesmo tempo, vale a versão do último link enviado.</li>
+      <li><b>Baixar planilha</b> gera um CSV que abre no Excel, com todas as linhas, a sugestão e a meta editada.</li>
+      <li>Limpar os dados do navegador apaga as edições. Guarde o link ou a planilha da versão que quiser manter.</li>
+    </ul>
+    <b>Notas sobre os números</b>
+    <ul id="notes"></ul>
+  </div>
+</div>
+<script>
+const DATA = {"rows": [{"id": "marvindecampos_tiago", "n": "Marvin de Campos", "ch": "F", "lid": "tiago", "ufs": ["RS", "MG", "PR"], "ini": "Já atuava em jan/26", "m": 10, "r26": 2159023, "ritmo": 215902, "base": 2590828, "g": 0.1, "perfil": "Estável", "trend": null, "ms": null, "meta": 2850000, "crit": "Ritmo médio 2026 × 12 + 10%. Tendência não calculada: carteira dividida entre dois líderes.", "tags": ["Contas do supervisor nacional", "Inclui Lucas Gregol", "Parte da carteira em Tiago"], "tipo": "sup"}, {"id": "marvindecampos_tati", "n": "Marvin de Campos", "ch": "F", "lid": "tati", "ufs": ["RS", "MG", "PR"], "ini": "Já atuava em jan/26", "m": 10, "r26": 3324630, "ritmo": 332463, "base": 3989556, "g": 0.1, "perfil": "Estável", "trend": null, "ms": null, "meta": 4389000, "crit": "Ritmo médio 2026 × 12 + 10%. Tendência não calculada: carteira dividida entre dois líderes.", "tags": ["Contas do supervisor nacional", "Inclui Lucas Gregol", "Parte da carteira em Tati"], "tipo": "sup"}, {"id": "hmedrepresenta_tiago", "n": "H. Med Representações", "ch": "F", "lid": "tiago", "ufs": ["MG"], "ini": "Começou em 03/2026", "m": 7.1, "r26": 200987, "ritmo": 28308, "base": 339696, "g": 0.0, "perfil": "Em queda", "trend": 0.55, "ms": [0, 0, 21301, 86357, 46018, 0, 15972, 28919, 0, 2238], "meta": 340000, "crit": "Jul–set 45% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "metavendas_patricia", "n": "Metavendas", "ch": "F", "lid": "patricia", "ufs": ["SP"], "ini": "Começou em 04/2026", "m": 6.1, "r26": 74636, "ritmo": 12235, "base": 146825, "g": 0.05, "perfil": "Em alta", "trend": 1.58, "ms": [0, 0, 0, 5706, 7736, 3839, 23298, 14314, 11400, 9074], "meta": 244000, "crit": "Jul–set acima da média do ano, 58% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,58) + 5%.", "tags": [], "tipo": "rca"}, {"id": "karenalvescard_tati", "n": "Karen Alves Cardoso (KAS)", "ch": "F", "lid": "tati", "ufs": ["PR"], "ini": "Começou em 03/2026", "m": 7.2, "r26": 167313, "ritmo": 23238, "base": 278855, "g": 0.0, "perfil": "Em queda", "trend": 0.56, "ms": [0, 0, 78450, 1196, 42516, 3648, 20583, 2615, 13634, 4571], "meta": 279000, "crit": "Jul–set 44% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "mendesegalindo_tiago", "n": "Mendes e Galindo", "ch": "F", "lid": "tiago", "ufs": ["BA"], "ini": "Começou em 02/2026", "m": 8.1, "r26": 94997, "ritmo": 11728, "base": 140736, "g": 0.1, "perfil": "Estável", "trend": 0.85, "ms": [0, 11300, 21110, 18514, 13160, 0, 18568, 11096, 0, 0], "meta": 155000, "crit": "Jul–set no mesmo passo do time (índice 0,85). Ritmo médio × 12 + 10%. Começou em 2026: 2027 é o primeiro ano cheio.", "tags": [], "tipo": "rca"}, {"id": "recomrepresent_aline", "n": "Recom Representações", "ch": "F", "lid": "aline", "ufs": ["MT"], "ini": "Já atuava em jan/26", "m": 10, "r26": 103991, "ritmo": 10399, "base": 124789, "g": 0.05, "perfil": "Em alta", "trend": 1.29, "ms": [4852, 3836, 21818, 15437, 10655, 2396, 33955, 5820, 7294, 3362], "meta": 169000, "crit": "Jul–set acima da média do ano, 29% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,29) + 5%.", "tags": [], "tipo": "rca"}, {"id": "canrepresentao_patricia", "n": "CAN Representação", "ch": "F", "lid": "patricia", "ufs": ["SP"], "ini": "Começou em 03/2026", "m": 7.3, "r26": 120335, "ritmo": 16484, "base": 197811, "g": 0.05, "perfil": "Em alta", "trend": 1.2, "ms": [0, 0, 853, 10710, 25870, 7800, 3581, 27087, 12794, 29184], "meta": 249000, "crit": "Jul–set acima da média do ano, 20% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,20) + 5%.", "tags": [], "tipo": "rca"}, {"id": "fortprime_patricia", "n": "Fortprime", "ch": "F", "lid": "patricia", "ufs": ["SP"], "ini": "Já atuava em jan/26", "m": 10, "r26": 66554, "ritmo": 6655, "base": 79865, "g": 0.0, "perfil": "Em queda", "trend": 0.58, "ms": [2035, 6710, 18781, 14432, 3043, 8830, 1847, 3809, 7651, 506], "meta": 80000, "crit": "Jul–set 42% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "wmrepresentaes_aline", "n": "WM Representações (A. de L. Wesen)", "ch": "F", "lid": "aline", "ufs": ["AC"], "ini": "Já atuava em jan/26", "m": 10, "r26": 119680, "ritmo": 11968, "base": 143616, "g": 0.0, "perfil": "Em queda", "trend": 0.78, "ms": [1773, 8180, 0, 5374, 57519, 5884, 18247, 8894, 1599, 11713], "meta": 144000, "crit": "Jul–set 22% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "alarcoemeirele_aline", "n": "Alarcão e Meireles", "ch": "F", "lid": "aline", "ufs": ["GO"], "ini": "Começou em 05/2026", "m": 5.6, "r26": 44916, "ritmo": 8021, "base": 96249, "g": 0.0, "perfil": "Em queda", "trend": 0.66, "ms": [0, 0, 0, 0, 12056, 15392, 7517, 6529, 2074, 974], "meta": 96000, "crit": "Jul–set 34% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "malcarepresent_rapha", "n": "Malca Representações", "ch": "F", "lid": "rapha", "ufs": ["CE"], "ini": "Começou em 03/2026", "m": 7.3, "r26": 413461, "ritmo": 56638, "base": 679662, "g": 0.05, "perfil": "Em alta", "trend": 1.65, "ms": [0, 0, 9499, 16713, 86002, 17470, 150391, 46703, 71029, 16854], "meta": 1179000, "crit": "Jul–set acima da média do ano, 65% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,65) + 5%.", "tags": [], "tipo": "rca"}, {"id": "alvessiqueira_tiago", "n": "Alves Siqueira", "ch": "F", "lid": "tiago", "ufs": ["SE"], "ini": "Começou em 08/2026", "m": 2.1, "r26": 4809, "ritmo": 2290, "base": 27480, "g": -0.2, "perfil": "Base curta", "trend": 0.67, "ms": [0, 0, 0, 0, 0, 0, 0, 4779, 0, 0], "meta": 22000, "crit": "Menos de 3 meses de histórico (2,1 meses). Ritmo × 12 com desconto de 20% por ser base curta. Revisar no 1º trimestre.", "tags": [], "tipo": "rca"}, {"id": "absmed_tiago", "n": "Absmed", "ch": "F", "lid": "tiago", "ufs": ["BA"], "ini": "Começou em 02/2026", "m": 8.1, "r26": 237206, "ritmo": 29285, "base": 351416, "g": 0.05, "perfil": "Em alta", "trend": 1.47, "ms": [0, 7700, 49722, 11685, 21386, 9660, 46123, 68071, 8176, 20591], "meta": 543000, "crit": "Jul–set acima da média do ano, 47% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,47) + 5%.", "tags": [], "tipo": "rca"}, {"id": "enzrepresentae_tati", "n": "ENZ Representações", "ch": "F", "lid": "tati", "ufs": ["SC"], "ini": "Começou em 03/2026", "m": 7.1, "r26": 277737, "ritmo": 39118, "base": 469415, "g": 0.05, "perfil": "Em alta", "trend": 1.41, "ms": [0, 0, 21299, 18488, 22631, 23094, 34236, 24441, 57977, 79303], "meta": 697000, "crit": "Jul–set acima da média do ano, 41% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,41) + 5%.", "tags": [], "tipo": "rca"}, {"id": "bzrepresentao_tati", "n": "BZ Representação", "ch": "F", "lid": "tati", "ufs": ["PR"], "ini": "Começou em 09/2026", "m": 1.6, "r26": 6891, "ritmo": 4307, "base": 51682, "g": -0.2, "perfil": "Base curta", "trend": 0.36, "ms": [0, 0, 0, 0, 0, 0, 0, 0, 1737, 5048], "meta": 41000, "crit": "Menos de 3 meses de histórico (1,6 meses). Ritmo × 12 com desconto de 20% por ser base curta. Revisar no 1º trimestre.", "tags": [], "tipo": "rca"}, {"id": "clebergomesdes_tiago", "n": "Cleber Gomes de Souza", "ch": "F", "lid": "tiago", "ufs": ["ES"], "ini": "Começou em 03/2026", "m": 7.1, "r26": 230715, "ritmo": 32495, "base": 389941, "g": 0.0, "perfil": "Em queda", "trend": 0.22, "ms": [0, 0, 48580, 0, 122157, 6184, 15490, 0, 2120, 38099], "meta": 390000, "crit": "Jul–set 78% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "bbdossantos_patricia", "n": "B. B. dos Santos", "ch": "F", "lid": "patricia", "ufs": ["SP"], "ini": "Já atuava em jan/26", "m": 10, "r26": 71171, "ritmo": 7117, "base": 85405, "g": 0.1, "perfil": "Estável", "trend": 0.91, "ms": [6664, 10499, 0, 11484, 0, 11952, 11547, 2580, 4486, 11388], "meta": 94000, "crit": "Jul–set no mesmo passo do time (índice 0,91). Ritmo médio × 12 + 10%.", "tags": [], "tipo": "rca"}, {"id": "mizabelpiresvi_joao", "n": "M. Izabel Pires Vieira", "ch": "F", "lid": "joao", "ufs": ["AM"], "ini": "Começou em 04/2026", "m": 6.3, "r26": 208168, "ritmo": 33043, "base": 396510, "g": 0.1, "perfil": "Estável", "trend": 0.91, "ms": [0, 0, 0, 1357, 91320, 14424, 33263, 21883, 23709, 22765], "meta": 436000, "crit": "Jul–set no mesmo passo do time (índice 0,91). Ritmo médio × 12 + 10%. Começou em 2026: 2027 é o primeiro ano cheio.", "tags": [], "tipo": "rca"}, {"id": "limaerepresent_aline", "n": "Lima e Representações", "ch": "F", "lid": "aline", "ufs": ["TO"], "ini": "Começou em 02/2026", "m": 8.2, "r26": 90250, "ritmo": 11006, "base": 132073, "g": 0.05, "perfil": "Em alta", "trend": 2.0, "ms": [0, 5045, 1871, 4927, 0, 5545, 19372, 18343, 14142, 22748], "meta": 277000, "crit": "Jul–set acima da média do ano, 100% melhor que a evolução do time. Base no patamar atual (ritmo médio × 2,00, limitada a 2× o ritmo médio) + 5%.", "tags": [], "tipo": "rca"}, {"id": "wkpharma_joao", "n": "WK Pharma", "ch": "F", "lid": "joao", "ufs": ["MA"], "ini": "Começou em 04/2026", "m": 6.1, "r26": 70989, "ritmo": 11638, "base": 139650, "g": 0.0, "perfil": "Em queda", "trend": 0.6, "ms": [0, 0, 0, 10258, 14950, 0, 0, 0, 9891, 42657], "meta": 140000, "crit": "Jul–set 40% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "tiagoluizdacru_tati", "n": "Tiago Luiz da Cruz Xavier", "ch": "F", "lid": "tati", "ufs": ["RS"], "ini": "Começou em 05/2026", "m": 5.2, "r26": 4454, "ritmo": 857, "base": 10278, "g": 0.0, "perfil": "Em queda", "trend": 0.0, "ms": [0, 0, 0, 0, 6815, 0, 0, 0, 0, 0], "meta": 10000, "crit": "Sem pedidos de jul a set. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "felrepresentae_tiago", "n": "F e L Representações", "ch": "F", "lid": "tiago", "ufs": ["BA"], "ini": "Começou em 05/2026", "m": 5.5, "r26": 17496, "ritmo": 3181, "base": 38173, "g": 0.0, "perfil": "Em queda", "trend": 0.0, "ms": [0, 0, 0, 0, 12192, 0, 0, 0, 0, 0], "meta": 38000, "crit": "Sem pedidos de jul a set. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "medicallfarmaj_joao", "n": "Medicall Farma (J. Larissa)", "ch": "F", "lid": "joao", "ufs": ["RR"], "ini": "Começou em 09/2026", "m": 1.2, "r26": 35704, "ritmo": 29753, "base": 357040, "g": -0.2, "perfil": "Base curta", "trend": 0.36, "ms": [0, 0, 0, 0, 0, 0, 0, 0, 4543, 31307], "meta": 286000, "crit": "Menos de 3 meses de histórico (1,2 meses). Ritmo × 12 com desconto de 20% por ser base curta. Revisar no 1º trimestre.", "tags": [], "tipo": "rca"}, {"id": "paulorepresent_joao", "n": "Paulo Representações", "ch": "F", "lid": "joao", "ufs": ["PI", "MA"], "ini": "Já atuava em jan/26", "m": 10, "r26": 585693, "ritmo": 58569, "base": 702832, "g": 0.1, "perfil": "Estável", "trend": 1.05, "ms": [99932, 66151, 44045, 74927, 32624, 41060, 62994, 31438, 109648, 17852], "meta": 773000, "crit": "Jul–set no mesmo passo do time (índice 1,05). Ritmo médio × 12 + 10%.", "tags": [], "tipo": "rca"}, {"id": "baruch_joao", "n": "Baruch", "ch": "F", "lid": "joao", "ufs": ["AM"], "ini": "Já atuava em jan/26", "m": 10, "r26": 378385, "ritmo": 37838, "base": 454062, "g": 0.05, "perfil": "Em alta", "trend": 2.04, "ms": [14558, 22536, 4160, 5348, 14739, 5384, 0, 18654, 137668, 155700], "meta": 954000, "crit": "Jul–set acima da média do ano, 104% melhor que a evolução do time. Base no patamar atual (ritmo médio × 2,04, limitada a 2× o ritmo médio) + 5%.", "tags": [], "tipo": "rca"}, {"id": "medicalcarerep_tiago", "n": "Medical Care Representações", "ch": "F", "lid": "tiago", "ufs": ["MG"], "ini": "Já atuava em jan/26", "m": 10, "r26": 2032601, "ritmo": 203260, "base": 2439121, "g": 0.0, "perfil": "Em queda", "trend": 0.72, "ms": [160915, 92005, 266209, 266542, 503142, 196482, 259650, 123960, 106016, 86430], "meta": 2439000, "crit": "Jul–set 28% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "soluesrepresen_rapha", "n": "Soluções Representações", "ch": "F", "lid": "rapha", "ufs": ["RN", "PB"], "ini": "Começou em 03/2026", "m": 7.1, "r26": 958052, "ritmo": 134937, "base": 1619243, "g": 0.1, "perfil": "Estável", "trend": 1.02, "ms": [0, 0, 84076, 191864, 146707, 113613, 100467, 86541, 196636, 0], "meta": 1781000, "crit": "Jul–set no mesmo passo do time (índice 1,02). Ritmo médio × 12 + 10%. Começou em 2026: 2027 é o primeiro ano cheio.", "tags": [], "tipo": "rca"}, {"id": "cadeaalves_joao", "n": "C. A. de A. Alves", "ch": "F", "lid": "joao", "ufs": ["PI", "MA"], "ini": "Já atuava em jan/26", "m": 10, "r26": 659914, "ritmo": 65991, "base": 791897, "g": 0.1, "perfil": "Estável", "trend": 1.19, "ms": [13133, 97295, 27023, 95353, 113920, 16068, 120851, 86312, 44715, 44925], "meta": 871000, "crit": "Jul–set no mesmo passo do time (índice 1,19). Ritmo médio × 12 + 10%.", "tags": [], "tipo": "rca"}, {"id": "caguiarreprese_rapha", "n": "C. Aguiar Representações", "ch": "F", "lid": "rapha", "ufs": ["PE", "PB", "AL"], "ini": "Começou em 03/2026", "m": 7.1, "r26": 791553, "ritmo": 111486, "base": 1337836, "g": 0.05, "perfil": "Em alta", "trend": 1.21, "ms": [0, 0, 9556, 45283, 174368, 130836, 40823, 107583, 202302, 47296], "meta": 1699000, "crit": "Jul–set acima da média do ano, 21% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,21) + 5%.", "tags": [], "tipo": "rca"}, {"id": "ribeiroreprese_aline", "n": "Ribeiro Representação", "ch": "F", "lid": "aline", "ufs": ["RO"], "ini": "Já atuava em jan/26", "m": 10, "r26": 1283122, "ritmo": 128312, "base": 1539746, "g": 0.05, "perfil": "Em alta", "trend": 1.62, "ms": [25071, 15197, 99132, 160602, 194033, 55432, 349450, 103955, 239282, 40589], "meta": 2621000, "crit": "Jul–set acima da média do ano, 62% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,62) + 5%.", "tags": [], "tipo": "rca"}, {"id": "sjnrepresentao_aline", "n": "SJN Representação", "ch": "F", "lid": "aline", "ufs": ["MT", "GO", "DF"], "ini": "Já atuava em jan/26", "m": 10, "r26": 1673688, "ritmo": 167369, "base": 2008426, "g": 0.05, "perfil": "Em alta", "trend": 2.68, "ms": [16913, 7790, 32119, 4665, 36032, 8968, 305489, 651980, 306428, 308392], "meta": 4218000, "crit": "Jul–set acima da média do ano, 168% melhor que a evolução do time. Base no patamar atual (ritmo médio × 2,68, limitada a 2× o ritmo médio) + 5%.", "tags": [], "tipo": "rca"}, {"id": "i9representaes_joao", "n": "I9 Representações (T. C. Soares)", "ch": "F", "lid": "joao", "ufs": ["PA"], "ini": "Já atuava em jan/26", "m": 10, "r26": 2382554, "ritmo": 238255, "base": 2859065, "g": 0.1, "perfil": "Estável", "trend": 0.92, "ms": [11440, 120117, 261886, 157195, 587372, 324723, 179743, 233321, 261664, 250062], "meta": 3145000, "crit": "Jul–set no mesmo passo do time (índice 0,92). Ritmo médio × 12 + 10%.", "tags": [], "tipo": "rca"}, {"id": "vsvmaster_patricia", "n": "VSV Master", "ch": "C", "lid": "patricia", "ufs": ["SP"], "ini": "Já atuava em jan/26", "m": 10, "r26": 5966971, "ritmo": 596697, "base": 7160365, "g": 0.0, "perfil": "Em queda", "trend": 0.76, "ms": [861997, 558598, 737017, 649994, 902399, 445017, 508638, 502553, 452398, 260296], "meta": 7160000, "crit": "Jul–set 24% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "palomataboas_rapha", "n": "Paloma Taboas", "ch": "C", "lid": "rapha", "ufs": ["PE", "CE", "PB", "RN"], "ini": "Já atuava em jan/26", "m": 10, "r26": 13357351, "ritmo": 1335735, "base": 16028821, "g": 0.1, "perfil": "Estável", "trend": 0.92, "ms": [1256207, 1195289, 1281376, 1602752, 2361547, 1061772, 1301840, 1122697, 1624048, 519982], "meta": 17632000, "crit": "Jul–set no mesmo passo do time (índice 0,92). Ritmo médio × 12 + 10%.", "tags": [], "tipo": "rca"}, {"id": "abrrepresentae_tiago", "n": "A.B.R. Representações", "ch": "C", "lid": "tiago", "ufs": ["RJ"], "ini": "Já atuava em jan/26", "m": 10, "r26": 4237951, "ritmo": 423795, "base": 5085541, "g": 0.0, "perfil": "Em queda", "trend": 0.75, "ms": [267213, 331251, 549696, 494742, 1068323, 258586, 402875, 297198, 324014, 143704], "meta": 5086000, "crit": "Jul–set 25% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "valentereprese_patricia", "n": "Valente Representações", "ch": "C", "lid": "patricia", "ufs": ["SP"], "ini": "Já atuava em jan/26", "m": 10, "r26": 2534869, "ritmo": 253487, "base": 3041843, "g": 0.0, "perfil": "Em queda", "trend": 0.75, "ms": [279914, 171137, 279419, 263422, 552478, 213702, 210762, 193190, 202981, 158384], "meta": 3042000, "crit": "Jul–set 25% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "repmed_tiago", "n": "Repmed", "ch": "C", "lid": "tiago", "ufs": ["BA", "PE", "SE"], "ini": "Já atuava em jan/26", "m": 10, "r26": 2741451, "ritmo": 274145, "base": 3289741, "g": 0.05, "perfil": "Em alta", "trend": 1.84, "ms": [81162, 90170, 86942, 51545, 45695, 23452, 5977, 330933, 319853, 135462], "meta": 4615000, "crit": "Jul–set acima da média do ano, 84% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,84) + 5%. Inclui carteira recebida de João Vitor/Patrícia (BA/SE) no mesmo ritmo de 2026, sem crescimento.", "tags": [], "tipo": "rca"}, {"id": "conexxosul_tati", "n": "Conexxão Sul", "ch": "C", "lid": "tati", "ufs": ["RS"], "ini": "Já atuava em jan/26", "m": 10, "r26": 975876, "ritmo": 97588, "base": 1171051, "g": 0.05, "perfil": "Em alta", "trend": 1.53, "ms": [34501, 51795, 49751, 29666, 1580, 22306, 43028, 89403, 79064, 26680], "meta": 1494000, "crit": "Jul–set acima da média do ano, 53% melhor que a evolução do time. Base no patamar atual (ritmo médio × 1,53) + 5%. Inclui carteira recebida de João Vitor/Patrícia (RS) no mesmo ritmo de 2026, sem crescimento.", "tags": [], "tipo": "rca"}, {"id": "andelvanrangel_patricia", "n": "Andelvan Rangel", "ch": "C", "lid": "patricia", "ufs": ["SP"], "ini": "Já atuava em jan/26", "m": 10, "r26": 50742, "ritmo": 5074, "base": 60890, "g": 0.1, "perfil": "Estável", "trend": 1.02, "ms": [671, 0, 4324, 0, 5671, 3440, 0, 2147, 5520, 27384], "meta": 67000, "crit": "Jul–set no mesmo passo do time (índice 1,02). Ritmo médio × 12 + 10%.", "tags": [], "tipo": "rca"}, {"id": "equipmed_aline", "n": "Equipmed", "ch": "C", "lid": "aline", "ufs": ["TO", "GO", "DF"], "ini": "Já atuava em jan/26", "m": 10, "r26": 2034121, "ritmo": 203412, "base": 2440945, "g": 0.0, "perfil": "Em queda", "trend": 0.6, "ms": [222325, 164731, 271628, 264893, 253529, 346631, 164104, 147932, 87377, 105108], "meta": 2441000, "crit": "Jul–set 40% abaixo da evolução do time. Meta = recuperar o ritmo médio de 2026 (sem crescimento).", "tags": [], "tipo": "rca"}, {"id": "hoepfnergerald_tati", "n": "Hoepfner (Geraldo)", "ch": "C", "lid": "tati", "ufs": ["PR", "SC"], "ini": "Já atuava em jan/26", "m": 10, "r26": 12234081, "ritmo": 1223408, "base": 14680897, "g": 0.1, "perfil": "Estável", "trend": null, "ms": null, "meta": 16149000, "crit": "Ritmo médio 2026 × 12 + 10%. Tendência mensal não calculada: o histórico mensal mistura a Medical.", "tags": [], "tipo": "rca"}, {"id": "deisercanova_aline", "n": "Deise (RCA nova)", "ch": "C", "lid": "aline", "ufs": ["GO", "DF", "MS", "MT"], "ini": "2027", "m": 10, "r26": 4378483, "ritmo": 437848, "base": 5254180, "g": 0.0, "perfil": "Carteira herdada", "trend": null, "ms": null, "meta": 5254000, "crit": "Carteiras herdadas de João Vitor e Patrícia (KA). Meta de manutenção: mesmo ritmo de 2026, sem crescimento, pela transição de carteira.", "tags": ["Gestão Aline e João"], "tipo": "rca"}, {"id": "deisercanova_joao", "n": "Deise (RCA nova)", "ch": "C", "lid": "joao", "ufs": ["AM", "PA", "PI"], "ini": "2027", "m": 10, "r26": 3885854, "ritmo": 388585, "base": 4663025, "g": 0.0, "perfil": "Carteira herdada", "trend": null, "ms": null, "meta": 4663000, "crit": "Carteiras herdadas de João Vitor e Patrícia (KA). Meta de manutenção: mesmo ritmo de 2026, sem crescimento, pela transição de carteira.", "tags": ["Gestão Aline e João"], "tipo": "rca"}, {"id": "vaga1_rapha", "n": "Vaga nova", "ch": "F", "lid": "rapha", "ufs": ["CE"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 209000, "crit": "Sem histórico. Mediana do ritmo dos RCAs Behikes que entraram em 2026 (R$ 279 mil/ano) × 9 meses, supondo contratação até março.", "tags": [], "tipo": "vaga"}, {"id": "vaga2_aline", "n": "Vaga nova", "ch": "F", "lid": "aline", "ufs": ["GO/MT/MS"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 209000, "crit": "Sem histórico. Mediana do ritmo dos RCAs Behikes que entraram em 2026 (R$ 279 mil/ano) × 9 meses, supondo contratação até março.", "tags": [], "tipo": "vaga"}, {"id": "vaga3_joao", "n": "Vaga nova", "ch": "F", "lid": "joao", "ufs": ["AP"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 209000, "crit": "Sem histórico. Mediana do ritmo dos RCAs Behikes que entraram em 2026 (R$ 279 mil/ano) × 9 meses, supondo contratação até março.", "tags": [], "tipo": "vaga"}, {"id": "vaga4_tiago", "n": "Vaga nova", "ch": "F", "lid": "tiago", "ufs": ["MG"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 209000, "crit": "Sem histórico. Mediana do ritmo dos RCAs Behikes que entraram em 2026 (R$ 279 mil/ano) × 9 meses, supondo contratação até março.", "tags": [], "tipo": "vaga"}, {"id": "vaga5_tiago", "n": "Vaga nova", "ch": "F", "lid": "tiago", "ufs": ["RJ"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 209000, "crit": "Sem histórico. Mediana do ritmo dos RCAs Behikes que entraram em 2026 (R$ 279 mil/ano) × 9 meses, supondo contratação até março.", "tags": [], "tipo": "vaga"}, {"id": "vaga6_tiago", "n": "Vaga nova", "ch": "F", "lid": "tiago", "ufs": ["SE/AL"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 209000, "crit": "Sem histórico. Mediana do ritmo dos RCAs Behikes que entraram em 2026 (R$ 279 mil/ano) × 9 meses, supondo contratação até março.", "tags": [], "tipo": "vaga"}, {"id": "vaga7_patricia", "n": "Vaga nova 1", "ch": "F", "lid": "patricia", "ufs": ["SP"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 209000, "crit": "Sem histórico. Mediana do ritmo dos RCAs Behikes que entraram em 2026 (R$ 279 mil/ano) × 9 meses, supondo contratação até março.", "tags": [], "tipo": "vaga"}, {"id": "vaga8_patricia", "n": "Vaga nova 2", "ch": "F", "lid": "patricia", "ufs": ["SP"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 209000, "crit": "Sem histórico. Mediana do ritmo dos RCAs Behikes que entraram em 2026 (R$ 279 mil/ano) × 9 meses, supondo contratação até março.", "tags": [], "tipo": "vaga"}, {"id": "vaga9_patricia", "n": "Vaga nova", "ch": "C", "lid": "patricia", "ufs": ["SP"], "ini": "2027", "m": 0, "r26": 0, "ritmo": 0, "base": 0, "g": 0, "perfil": "Vaga nova", "trend": null, "ms": null, "meta": 0, "crit": "Sem histórico de RCA Boinas novo em 2026 para comparar. Meta a definir pelo líder.", "tags": [], "tipo": "vaga"}, {"id": "vagaext_tiago", "n": "Vaga nova · carteira “venda externa”", "ch": "C", "lid": "tiago", "ufs": ["MG/ES"], "ini": "2027", "m": 10, "r26": 1767259, "ritmo": 176726, "base": 2120711, "g": -0.1, "perfil": "Carteira herdada", "trend": null, "ms": null, "meta": 1909000, "crit": "Clientes “venda externa” da Patrícia Arruda em MG e ES. Ritmo 2026 × 12 com desconto de 10%: a carteira fica sem dono até o líder decidir quem atende.", "tags": ["Carteira da Patrícia"], "tipo": "vaga"}], "excl": {"med": 20781185, "int": {"aline": 19382, "joao": 839423, "tiago": 842921}}, "inat": {"F": 940240, "C": 1395297}, "vagaF": 209000, "medVaga": 278856};
+const LEAD=[
+  {id:'rapha',nome:'Rapha',area:'Nordeste',ufs:'AL, PE, PB, RN, CE'},
+  {id:'aline',nome:'Aline',area:'Centro-Oeste e Norte',ufs:'GO, MS, MT, RO, TO, DF, AC'},
+  {id:'joao',nome:'João',area:'Norte e Nordeste',ufs:'PI, MA, PA, AM, AP, RR'},
+  {id:'tiago',nome:'Tiago',area:'Sudeste, BA e SE',ufs:'MG, RJ, ES, BA, SE'},
+  {id:'patricia',nome:'Patrícia',area:'São Paulo',ufs:'SP'},
+  {id:'tati',nome:'Tati',area:'Sul',ufs:'RS, SC, PR'}];
+const ROWS=DATA.rows, BYID=Object.fromEntries(ROWS.map(r=>[r.id,r]));
+const KEY='boped-metas-2027-v1';
+const MES=['jan','fev','mar','abr','mai','jun','jul','ago','set','out'];
+let E={}; // id -> {m:number|undefined, o:string|undefined}
+let fL='all', fC='all';
+
+const brl=v=>'R$ '+Math.round(v).toLocaleString('pt-BR');
+const mi=(v,d=1)=>'R$ '+(v/1e6).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+' mi';
+const pc=(v,d=1)=>(v>0?'+':'')+(v*100).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const meta=r=>E[r.id]&&E[r.id].m!=null?E[r.id].m:r.meta;
+const edited=r=>E[r.id]&&E[r.id].m!=null&&E[r.id].m!==r.meta;
+const obs=r=>(E[r.id]&&E[r.id].o)||'';
+const parseBRL=s=>{s=String(s).trim().toLowerCase().replace(/r\$|\s/g,'');let mult=1;
+  if(/mi$/.test(s)){mult=1e6;s=s.replace(/mi$/,'');} else if(/(mil|k)$/.test(s)){mult=1e3;s=s.replace(/(mil|k)$/,'');}
+  if(mult>1) s=s.replace(/\./g,'').replace(',','.'); else s=s.replace(/\./g,'').replace(',','.');
+  const n=parseFloat(s); return isFinite(n)?Math.max(0,Math.round(n*mult)):null;};
+
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');E=s.e||{};}catch(e){E={};}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({e:E,t:Date.now()}));}catch(e){} renderSave();}
+function clean(){for(const k in E){const r=BYID[k];if(!r){delete E[k];continue;}if(E[k].m===r.meta)delete E[k].m;if(!E[k].o)delete E[k].o;if(E[k].m==null&&!E[k].o)delete E[k];}}
+function renderSave(){const n=ROWS.filter(edited).length,o=ROWS.filter(r=>obs(r)).length;
+  document.getElementById('saveTxt').innerHTML=n||o?`<b>${n} meta${n!==1?'s':''} editada${n!==1?'s':''}</b>${o?` · ${o} observaç${o>1?'ões':'ão'}`:''} · salvo neste navegador`:'Sem edições: mostrando a meta sugerida';}
+
+/* Link compartilhável */
+const b64e=s=>btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const b64d=s=>decodeURIComponent(escape(atob(s.replace(/-/g,'+').replace(/_/g,'/'))));
+function shareURL(){clean();const p={};for(const k in E)p[k]=[E[k].m??null,E[k].o||''];
+  return location.href.split('#')[0]+'#m='+b64e(JSON.stringify({v:1,e:p}));}
+function fromHash(){
+  const m=location.hash.match(/^#m=(.+)$/); if(!m) return;
+  try{const p=JSON.parse(b64d(m[1])); if(p.v!==1) return;
+    const prev=JSON.parse(JSON.stringify(E)); E={};
+    for(const k in p.e){if(!BYID[k])continue;E[k]={};if(p.e[k][0]!=null)E[k].m=p.e[k][0];if(p.e[k][1])E[k].o=p.e[k][1];}
+    clean(); save(); history.replaceState(null,'',location.pathname+location.search);
+    const b=document.getElementById('banner'); b.hidden=false;
+    const n=ROWS.filter(edited).length;
+    b.innerHTML=`<span>Metas carregadas do link compartilhado (${n} meta${n!==1?'s':''} editada${n!==1?'s':''}). Elas substituíram as edições que estavam neste navegador.</span><span style="display:flex;gap:8px"><button class="btn" id="undoBtn" type="button">Desfazer</button><button class="btn" id="okBtn" type="button">OK</button></span>`;
+    document.getElementById('undoBtn').onclick=()=>{E=prev;save();b.hidden=true;renderAll();};
+    document.getElementById('okBtn').onclick=()=>{b.hidden=true;};
+  }catch(e){console.warn('link inválido',e);}
+}
+
+function spark(r){
+  if(!r.ms) return '<span class="muted">–</span>';
+  const mx=Math.max(...r.ms,1), W=92,H=26,bw=7,gap=2.2;
+  return `<svg class="spark" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Pedidos mensais jan a out">${r.ms.map((v,i)=>{const h=Math.max(1,v/mx*(H-2));return `<rect class="${i===9?'oct':''}" x="${i*(bw+gap)}" y="${H-h}" width="${bw}" height="${h}" rx="1.5"><title>${MES[i]}/26: ${brl(v)}${i===9?' (incompleto)':''}</title></rect>`}).join('')}</svg>`;
+}
+const PILL={'Em alta':'p-alta','Em queda':'p-queda','Estável':'p-estavel','Base curta':'p-curta','Vaga nova':'p-vaga','Carteira herdada':'p-herd'};
+
+function tot(rs){const t={r26:0,base:0,sug:0,meta:0,n:0};rs.forEach(r=>{t.r26+=r.r26;t.base+=r.base;t.sug+=r.meta;t.meta+=meta(r);if(r.tipo!=='vaga'&&r.tipo!=='sup')t.n++;});return t;}
+function repCount(rs){return new Set(rs.filter(r=>r.tipo==='rca').map(r=>r.n)).size;}
+
+function renderKpis(){
+  const t=tot(ROWS), f=tot(ROWS.filter(r=>r.ch==='F')), c=tot(ROWS.filter(r=>r.ch==='C'));
+  const dv=t.meta/t.base-1;
+  document.getElementById('kpis').innerHTML=[
+    {v:mi(t.meta),l:'Meta 2027 · seis regionais',d:`<span class="${dv>=0?'up':'dn'}">${pc(dv)} sobre a base 12 meses</span> · ${mi(t.meta/12,2)} por mês`,c:'hero'},
+    {v:mi(t.r26),l:'Realizado 2026 (jan–out)',d:`Base 12 meses: ${mi(t.base)}`},
+    {v:mi(f.meta),l:'Behikes · Farma · meta 2027',d:`${pc(f.meta/f.base-1)} sobre a base · sugestão ${mi(f.sug)}`},
+    {v:mi(c.meta),l:'Boinas Azuis · Cirúrgico · meta 2027',d:`${pc(c.meta/c.base-1)} sobre a base · sugestão ${mi(c.sug)}`}
+  ].map(x=>`<div class="kpi ${x.c||''}"><span class="v">${x.v}</span><span class="l">${x.l}</span><span class="d">${x.d}</span></div>`).join('');
+}
+function renderSum(){
+  const T=tot(ROWS);
+  document.getElementById('sumBody').innerHTML=LEAD.map(L=>{const rs=ROWS.filter(r=>r.lid===L.id),t=tot(rs),v=rs.filter(r=>r.tipo==='vaga').length;
+    return `<tr><td class="l"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--r-${L.id});margin-right:6px"></span>${L.nome}</td><td class="l">${L.ufs}</td><td>${repCount(rs)}${v?` <span class="muted">+${v} vaga${v>1?'s':''}</span>`:''}</td><td>${brl(t.r26)}</td><td>${brl(t.base)}</td><td class="muted">${brl(t.sug)}</td><td><b>${brl(t.meta)}</b></td><td class="${t.meta>=t.base?'up':'dn'}">${pc(t.meta/t.base-1)}</td><td>${brl(t.meta/12)}</td><td>${(t.meta/T.meta*100).toLocaleString('pt-BR',{maximumFractionDigits:1})}%</td></tr>`}).join('');
+  const v=ROWS.filter(r=>r.tipo==='vaga').length;
+  document.getElementById('sumFoot').innerHTML=`<tr><td class="l">Total</td><td class="l">27 UFs</td><td>${repCount(ROWS)} <span class="muted">+${v} vagas</span></td><td>${brl(T.r26)}</td><td>${brl(T.base)}</td><td>${brl(T.sug)}</td><td>${brl(T.meta)}</td><td>${pc(T.meta/T.base-1)}</td><td>${brl(T.meta/12)}</td><td>100%</td></tr>`;
+}
+function rowHTML(r){
+  const m=meta(r), g=r.base?m/r.base-1:null, ed=edited(r);
+  const ini=r.ini.startsWith('Já')?'antes de 2026':r.ini==='2027'?'2027':r.ini.replace('Começou em ','desde ');
+  return `<tr data-id="${r.id}" class="${r.tipo==='vaga'?'vg':''} ${ed?'ed':''}">
+   <td class="l nm"><b>${esc(r.n)}</b><small>${r.ufs.join(', ')} · ${ini}</small>${r.tags.map(t=>`<span class="tg">${t}</span>`).join('')}<small class="crit">${r.crit}</small></td>
+   <td class="l"><span class="tg ${r.ch==='F'?'cf':'cc'}" style="margin:0">${r.ch==='F'?'Behikes':'Boinas'}</span></td>
+   <td>${r.r26?brl(r.r26):'–'}</td><td>${r.ritmo?brl(r.ritmo):'–'}</td>
+   <td style="--c:${r.ch==='F'?'var(--farma)':'var(--cir)'}">${spark(r)}</td>
+   <td class="l"><span class="pill ${PILL[r.perfil]||''}">${r.perfil}</span></td>
+   <td>${r.base?brl(r.base):'–'}</td><td class="muted">${brl(r.meta)}</td>
+   <td><input class="in meta" inputmode="decimal" aria-label="Meta 2027 de ${esc(r.n)}" value="${Math.round(m).toLocaleString('pt-BR')}">${ed?`<button class="rst" type="button" data-rst="${r.id}">sugestão</button>`:''}</td>
+   <td>${r.base?`<input class="in pc" inputmode="decimal" aria-label="Crescimento sobre a base" value="${(Math.round(g*1000)/10+0).toLocaleString('pt-BR',{maximumFractionDigits:1})}">`:'<span class="muted">–</span>'}</td>
+   <td class="mm">${brl(m/12)}</td>
+   <td class="l"><input class="in obs" aria-label="Observação" placeholder="Obs." value="${esc(obs(r))}"></td></tr>`;
+}
+function renderBlocks(){
+  document.getElementById('blocks').innerHTML=LEAD.filter(L=>fL==='all'||fL===L.id).map(L=>{
+    let rs=ROWS.filter(r=>r.lid===L.id&&(fC==='all'||r.ch===fC));
+    rs.sort((a,b)=>(a.tipo==='vaga')-(b.tipo==='vaga')||(a.ch>b.ch?1:a.ch<b.ch?-1:0)||b.base-a.base);
+    const t=tot(rs);
+    return `<article class="lb" style="--c:var(--r-${L.id})" data-l="${L.id}"><header><h3>${L.nome} <span class="muted" style="font-size:1rem;font-weight:500">· ${L.area} · ${L.ufs}</span></h3><span class="s" data-hs>${hdr(t)}</span></header>
+    <div class="tw"><table><thead><tr><th class="l">Representante · critério da sugestão</th><th class="l">Canal</th><th>Realizado 2026 jan–out</th><th>Média mês 2026</th><th>Pedidos jan–out</th><th class="l">Situação</th><th>Base 12 meses</th><th>Meta sugerida</th><th>Meta 2027 (R$)</th><th>% s/ base</th><th>Meta mês</th><th class="l">Observação</th></tr></thead>
+    <tbody>${rs.map(rowHTML).join('')}</tbody>
+    <tfoot><tr><td class="l">Total ${L.nome}${fC!=='all'?(fC==='F'?' · Behikes':' · Boinas'):''}</td><td></td><td>${brl(t.r26)}</td><td></td><td></td><td></td><td>${brl(t.base)}</td><td>${brl(t.sug)}</td><td data-tm>${brl(t.meta)}</td><td data-tp>${pc(t.meta/t.base-1)}</td><td data-tmm>${brl(t.meta/12)}</td><td></td></tr></tfoot></table></div></article>`;
+  }).join('');
+}
+const hdr=t=>`Realizado 2026 ${mi(t.r26)} · meta 2027 <b style="color:var(--fg)">${mi(t.meta,2)}</b> (${pc(t.meta/t.base-1)} s/ base)`;
+function refreshTotals(){
+  document.querySelectorAll('.lb').forEach(a=>{const id=a.dataset.l;const rs=ROWS.filter(r=>r.lid===id&&(fC==='all'||r.ch===fC));const t=tot(rs);
+    a.querySelector('[data-hs]').innerHTML=hdr(t);a.querySelector('[data-tm]').textContent=brl(t.meta);a.querySelector('[data-tp]').textContent=pc(t.meta/t.base-1);a.querySelector('[data-tmm]').textContent=brl(t.meta/12);});
+  renderKpis(); renderSum(); renderSave();
+}
+function updateRow(tr){const r=BYID[tr.dataset.id]; const n=document.createElement('tbody'); n.innerHTML=rowHTML(r); tr.replaceWith(n.firstElementChild);}
+
+const blocks=document.getElementById('blocks');
+blocks.addEventListener('change',e=>{
+  const tr=e.target.closest('tr[data-id]'); if(!tr) return; const r=BYID[tr.dataset.id];
+  E[r.id]=E[r.id]||{};
+  if(e.target.classList.contains('meta')){const v=parseBRL(e.target.value); if(v==null){updateRow(tr);return;} E[r.id].m=v;}
+  else if(e.target.classList.contains('pc')){const p=parseFloat(String(e.target.value).replace(',','.')); if(!isFinite(p)){updateRow(tr);return;} E[r.id].m=Math.max(0,Math.round(r.base*(1+p/100)/1000)*1000);}
+  else if(e.target.classList.contains('obs')){E[r.id].o=e.target.value.trim().slice(0,200);}
+  clean(); save(); updateRow(tr); refreshTotals();
+});
+blocks.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.in')){e.target.blur();}});
+blocks.addEventListener('click',e=>{const b=e.target.closest('[data-rst]'); if(!b) return; const id=b.dataset.rst; if(E[id]) delete E[id].m; clean(); save(); updateRow(b.closest('tr')); refreshTotals();});
+
+function seg(el,items,get,set){el.innerHTML=items.map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${get()===v}">${l}</button>`).join('');
+  el.querySelectorAll('button').forEach(b=>b.onclick=()=>{set(b.dataset.v);el.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderBlocks();});}
+seg(document.getElementById('fLid'),[['all','Todos os líderes'],...LEAD.map(L=>[L.id,L.nome])],()=>fL,v=>fL=v);
+seg(document.getElementById('fCh'),[['all','Todos os canais'],['F','Behikes · Farma'],['C','Boinas · Cirúrgico']],()=>fC,v=>fC=v);
+
+document.getElementById('shareBtn').onclick=async()=>{const u=shareURL(),b=document.getElementById('shareBtn');
+  try{await navigator.clipboard.writeText(u);b.textContent='Link copiado';}catch(e){prompt('Copie o link:',u);}
+  setTimeout(()=>b.textContent='Copiar link com as metas',2500);};
+document.getElementById('resetBtn').onclick=()=>{if(!ROWS.some(r=>E[r.id]))return; if(confirm('Apagar todas as edições deste navegador e voltar à meta sugerida? Copie o link antes se quiser guardar a versão atual.')){E={};save();renderAll();}};
+document.getElementById('csvBtn').onclick=()=>{
+  const n=v=>Math.round(v).toString(), q=s=>'"'+String(s).replace(/"/g,'""')+'"';
+  const L=Object.fromEntries(LEAD.map(x=>[x.id,x.nome]));
+  const lines=[['Líder','Representante','Canal','UFs','Início','Realizado 2026 jan-out','Média mês 2026','Base 12 meses','Situação','Critério da sugestão','Meta sugerida','Meta 2027','% sobre base','Meta mês','Editada','Observação'].map(q).join(';')];
+  LEAD.forEach(Ld=>ROWS.filter(r=>r.lid===Ld.id).forEach(r=>{const m=meta(r);lines.push([q(L[r.lid]),q(r.n),q(r.ch==='F'?'Behikes':'Boinas'),q(r.ufs.join(', ')),q(r.ini),n(r.r26),n(r.ritmo),n(r.base),q(r.perfil),q(r.crit),n(r.meta),n(m),r.base?((m/r.base-1)*100).toFixed(1).replace('.',','):'',n(m/12),edited(r)?'sim':'',q(obs(r))].join(';'));}));
+  const blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='metas_boped_2027.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+
+document.getElementById('notes').innerHTML=[
+  'Fonte: Faturamento_BOPED_2026.xlsx (faturamento oficial “01X10”, jan–out/2026, times Behikes e Boinas) e a aba “Pedidos mensais (estim.)” para a tendência. Os pedidos mensais são uma estimativa por cliente e servem só para ver o ritmo; os valores em R$ da meta vêm do faturamento oficial.',
+  'Carteiras 2027 iguais às do painel V2: KAs João Vitor e Patrícia viram líderes sem clientes diretos; as carteiras deles foram divididas por UF conforme a planilha “TIME BOPED CONSIDERAÇÕES”. Clientes pontuais fora da UF de atuação contam na UF principal do representante.',
+  'RCA Deise aparece duas vezes, uma em cada líder (Aline: GO, DF, MS, MT; João: AM, PA, PI), e conta uma vez no total de representantes. Meta de manutenção da carteira herdada.',
+  'Repmed (BA/SE) e Conexxão Sul (RS) recebem clientes de João Vitor e Patrícia. A parte recebida entra no mesmo ritmo de 2026; a parte própria segue a regra da tendência. Essas atribuições ainda aguardam confirmação.',
+  'Marvin de Campos (supervisor nacional) aparece como contas do supervisor, dividido entre Tiago e Tati pela UF do cliente, com as vendas do Lucas Gregol já somadas. Não conta como representante.',
+  `Hoepfner (Geraldo) entra sem a Medical (${mi(DATA.excl.med)} em 2026, canal online). A tendência mensal dele não foi calculada porque o histórico mensal mistura a Medical.`,
+  `Fora dos totais: clientes que voltam para o interno (AP/MA ${mi(DATA.excl.int.joao,2)}, MG incluindo Hand Shop ${mi(DATA.excl.int.tiago,2)}, GO ${mi(DATA.excl.int.aline,2)}) e representantes que saíram em 2026.`,
+  `Vagas novas Behikes: mediana do ritmo dos RCAs Behikes que entraram em 2026 (${mi(DATA.medVaga,2)} por ano) × 9 meses, supondo contratação até março. A vaga Boinas em SP fica em zero até o líder definir. A vaga “venda externa” do Tiago (MG/ES) leva a carteira da Patrícia com 10% de desconto pela transição.`,
+  'Valores sugeridos arredondados para o milhar. A base 12 meses de quem começou em 2026 projeta um ano cheio, então a comparação com o realizado jan–out não é direta.'
+].map(x=>`<li>${x}</li>`).join('');
+
+function renderAll(){renderKpis();renderSum();renderBlocks();renderSave();}
+load(); fromHash(); renderAll();
+
+/* Tema */
+const root=document.documentElement, tb=document.getElementById('themeBtn');
+const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+const syncT=()=>tb.textContent=isDark()?'Tema claro':'Tema escuro';
+try{const s=localStorage.getItem('boped-theme');if(s==='dark'||s==='light')root.dataset.theme=s;}catch(e){}
+tb.onclick=()=>{const n=isDark()?'light':'dark';root.dataset.theme=n;try{localStorage.setItem('boped-theme',n);}catch(e){}syncT();};
+syncT();
+</script>
+</body>
+</html>
